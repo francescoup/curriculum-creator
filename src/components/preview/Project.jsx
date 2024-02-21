@@ -1,7 +1,7 @@
 import React from "react";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
-import SectionTitle from "../../atoms/sectionTitle";
+import SectionTitle from "../../atoms/SectionTitle";
 
 const Project = () => {
   const projects = usePersonalInfo((state) => state.projects);
