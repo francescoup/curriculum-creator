@@ -14,7 +14,6 @@ const InputSelect = ({ label, options, name }) => {
           return (
             <option key={element.name} value={element.color}>
               {element.name}
-              <div className={`${element.color} w-10 h-10 mr-5`}></div>
             </option>
           );
         })}

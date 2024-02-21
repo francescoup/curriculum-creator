@@ -1,9 +1,23 @@
 import React from "react";
 import Buttons from "../atoms/Buttons";
 import { Link } from "react-router-dom";
-Link;
-
+const items = {
+  nome: "ciccio",
+  lavori: [
+    { titolo: "niente", ruolo: "oprario" },
+    { titolo: "niente", ruolo: "oprario" },
+  ],
+};
 const Header = () => {
+  const fetchData = async () => {
+    fetch("http://localhost:3000/users/", {
+      method: "POST",
+      body: JSON.stringify({ nome: "giorgio", lavoro: "nenti" }),
+    });
+  };
+  const saveToLocalStorage = () => {
+    localStorage.setItem("appointment", JSON.stringify(items));
+  };
   return (
     <header className="grid grid-cols-1 md:grid-cols-5 gap-3 items-start h-full bg-white px-4 py-4 md:px-20">
       <div className="md:col-span-3">
@@ -17,7 +31,9 @@ const Header = () => {
           seguendo 3 sempilci step!
         </p>
         <Link to="/template">
-          <Buttons size="big">Costruisci il tuo CV</Buttons>
+          <Buttons handleClick={saveToLocalStorage} size="big">
+            Costruisci il tuo CV
+          </Buttons>
         </Link>
       </div>
     </header>

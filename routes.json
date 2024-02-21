@@ -1,0 +1,3 @@
+{
+    "/users/:userId/jobs/:jobId" : "/jobs/:jobId"
+}

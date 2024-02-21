@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import ProfessionalSummary from "./ProfessionalSummary";
 import PersonalInformations from "./PersonalInformations";
+import ProfessionalLink from "./ProfessionalLink";
+import AccademicSummary from "./AccademicSummary";
+import EducationSummary from "./EducationSummary";
 import Buttons from "../../atoms/Buttons";
 import { useNavigate } from "react-router-dom";
+import PersonalSkills from "./PersonalSkills";
+import ProjectsSummary from "./ProjectsSummary";
+import PersonalSummary from "./PersonalSummary";
 
-const step = [<PersonalInformations />, <ProfessionalSummary />];
+const step = [
+  <PersonalInformations />,
+  <PersonalSummary />,
+  <ProfessionalLink />,
+  <ProfessionalSummary />,
+  <AccademicSummary />,
+  <EducationSummary />,
+  <ProjectsSummary />,
+  <PersonalSkills />,
+];
 
-const StepForm = () => {
-  const navigate = useNavigate();
-  const [index, setIndex] = useState(0);
-  const [disable, setDisable] = useState();
-
-  const nextStep = () => {
-    setIndex(index + 1);
-  };
-  const prevStep = () => {
-    if (index === 0) {
-      navigate("/template");
-    } else {
-      setIndex(index - 1);
-    }
-  };
+const StepForm = ({ index }) => {
   return (
-    <div className="w-full">
-      <>{step[index]}</>
-      <Buttons handleClick={prevStep}>Prev step</Buttons>
-      <Buttons handleClick={nextStep}>Next step</Buttons>
+    <div className="w-full mb-20  flex flex-col justify-between">
+      <div>{step[index]}</div>
     </div>
   );
 };

@@ -1,3 +1,40 @@
 {
-    "resumes" : []
+  "users": [
+    {
+      "id": "b2f6",
+      "nome": "giorgio",
+      "lavoro": "nenti"
+    },
+    {
+      "id": "a3ythj1"
+    },
+    {
+      "id": "R7ygiOO"
+    },
+    {
+      "id": "8A7bP9H"
+    }
+  ],
+  "jobs": [
+    {
+      "userId": "b2f6",
+      "id": "kgypwcp"
+    },
+    {
+      "userId": "b2f6",
+      "id": "ScSh98P"
+    },
+    {
+      "userId": "b2f6",
+      "id": "_LdoigR"
+    },
+    {
+      "userId": "b2f6",
+      "id": "Eo67S8B"
+    },
+    {
+      "userId": ":b2f6",
+      "id": "PlCz1vd"
+    }
+  ]
 }
