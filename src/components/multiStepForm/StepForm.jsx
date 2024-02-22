@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import ProfessionalSummary from "./ProfessionalSummary";
 import PersonalInformations from "./PersonalInformations";
 import ProfessionalLink from "./ProfessionalLink";
 import AccademicSummary from "./AccademicSummary";
 import EducationSummary from "./EducationSummary";
-import Buttons from "../../atoms/Buttons";
-import { useNavigate } from "react-router-dom";
 import PersonalSkills from "./PersonalSkills";
 import ProjectsSummary from "./ProjectsSummary";
 import PersonalSummary from "./PersonalSummary";

@@ -57,7 +57,6 @@ const PersonalInformations = () => {
         onChange={(e) => updateProfileAdress(e.target.value)}
         label="Indirizzo Completo"
       />
-      <button>salata</button>
     </div>
   );
 };

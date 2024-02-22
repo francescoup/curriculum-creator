@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import InputText from "../../atoms/InputText";
+import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
@@ -44,30 +45,27 @@ const ProfessionalSummary = () => {
   return (
     <>
       <div className="flex flex-col items-end gap-2 w-full">
-        <span className="text-xl text-sky-700">Esperienze lavorative</span>
-        {jobs
-          .map((j) => {
-            return (
-              <div
-                onClick={() => removeJobs(j.id)}
-                className="w-full p-4 bg-gray-white shadow"
-                key={j.id}
-              >
-                {j.jobTitle}
-              </div>
-            );
-          })
-          .reverse()}
+        <span className="text-xl w-full text-sky-700">
+          Esperienze lavorative
+        </span>
         <InputText
           value={jobTitle}
           onChange={(e) => updateJobTitle(e.target.value)}
           label="Titolo"
         />
-        <InputText
-          value={company}
-          onChange={(e) => updateCompany(e.target.value)}
-          label="Azienda"
-        />
+        <div className="flex gap-4">
+          <InputText
+            value={company}
+            onChange={(e) => updateCompany(e.target.value)}
+            label="Azienda"
+          />
+
+          <InputText
+            value={adress}
+            onChange={(e) => updateAdress(e.target.value)}
+            label="Luogo"
+          />
+        </div>
 
         <div className="flex w-full gap-4">
           <InputText
@@ -82,20 +80,29 @@ const ProfessionalSummary = () => {
           />
         </div>
 
-        <InputText
-          value={adress}
-          onChange={(e) => updateAdress(e.target.value)}
-          label="Luogo"
-        />
-        <InputText
+        <TextArea
           value={description}
           onChange={(e) => updateDescription(e.target.value)}
           label="Descrizione"
         />
 
         <Buttons size="small" handleClick={addJobs}>
-          +
+          + Aggiungi esperienze
         </Buttons>
+        {jobs
+          .map((j) => {
+            return (
+              <div
+                onClick={() => removeJobs(j.id)}
+                className="w-full block p-2 bg-gray-200 rounded-md"
+                key={j.id}
+              >
+                <div className="text-xs">{j.jobTitle}</div>
+                <div className="text-[10px]">{j.company}</div>
+              </div>
+            );
+          })
+          .reverse()}
       </div>
     </>
   );

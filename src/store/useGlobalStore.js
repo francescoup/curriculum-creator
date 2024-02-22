@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { createJobsSlice } from "./jobsSlice";
+import { createJobsSlice } from "./slice/jobsSlice";
 import { skillSlice } from "./slice/skillSlice";
 import { educationSlice } from "./slice/educationSlice";
 import { projectSlice } from "./slice/projectSlice";

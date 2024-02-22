@@ -1,6 +1,6 @@
 import React from "react";
-import InputText from "../../atoms/InputText";
 import { usePersonalInfo } from "../../store/useGlobalStore";
+import TextArea from "../../atoms/TextArea";
 
 const PersonalSummary = () => {
   const summary = usePersonalInfo((state) => state.summary);
@@ -8,8 +8,9 @@ const PersonalSummary = () => {
   return (
     <div className="flex flex-col gap-2 w-full">
       <span className="text-xl text-sky-700">Descrizione</span>
-      <InputText
+      <TextArea
         value={summary}
+        text="Inserisci una breve descrizione del tuo percorso professionale."
         onChange={(e) => updateSummary(e.target.value)}
         label="Inserisci una breve introduzione"
       />

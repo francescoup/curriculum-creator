@@ -35,8 +35,8 @@ const AccademicSummary = () => {
     }))
   );
   return (
-    <div className="flex flex-col gap-2 w-full">
-      <span className="text-xl text-sky-700">Istruzione</span>
+    <div className="flex flex-col gap-2 w-full items-end">
+      <span className="text-xl w-full text-sky-700">Istruzione</span>
       <InputText
         value={eduTitle}
         onChange={(e) => updateEduTitle(e.target.value)}
@@ -65,7 +65,7 @@ const AccademicSummary = () => {
         />
       </div>
       <Buttons size="small" handleClick={addEdu}>
-        +
+        + Aggiungi istruzione
       </Buttons>
     </div>
   );

@@ -1,6 +1,6 @@
 export const certificationsSlice = (set) => ({
   id: Date.now(),
-  certicationTitle: "",
+  certificationTitle: "",
   certificationAdress: "",
   certifications: [],
   updateCertTitle(value) {
@@ -16,20 +16,19 @@ export const certificationsSlice = (set) => ({
     }));
   },
 
-  //   addCertifications() {
-  //     set((state) => ({
-  //       certifications: [
-  //         ...state.certifications,
-  //         {
-  //           id: state.id,
-  //           certicationTitle: state.certicationTitle,
-  //           certificacionAdress: state.certicationAdress,
-  //         },
-  //       ],
-  //       id: Date.now(),
-  //       certicationTitle: "",
-  //       certificacionAdress: "",
-  //       certifications: [],
-  //     }));
-  //   },
+  addCertifications() {
+    set((state) => ({
+      certifications: [
+        ...state.certifications,
+        {
+          id: state.id,
+          certificationTitle: state.certificationTitle,
+          certificationAdress: state.certificationAdress,
+        },
+      ],
+      id: Date.now(),
+      certificationTitle: "",
+      certificationAdress: "",
+    }));
+  },
 });

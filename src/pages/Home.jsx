@@ -6,7 +6,7 @@ import { cardData } from "../data/cardData";
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen flex flex-col justify-between">
       <Navbar />
       <Header />
       <div className="flex gap-4 px-4 py-8 md:px-20 snap-x snap-mandatory overflow-x-auto ">

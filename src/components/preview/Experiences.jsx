@@ -1,17 +1,29 @@
 import React from "react";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
-import SectionTitle from "../../atoms/sectionTitle";
+import SectionTitle from "../../atoms/SectionTitle";
+import { useShallow } from "zustand/react/shallow";
 
 const Experiences = () => {
-  const state = usePersonalInfo();
+  const { jobTitle, company, from, to, adress, description, jobs } =
+    usePersonalInfo(
+      useShallow((s) => ({
+        jobTitle: s.jobTitle,
+        company: s.company,
+        from: s.from,
+        to: s.to,
+        adress: s.adress,
+        description: s.description,
+        jobs: s.jobs,
+      }))
+    );
   return (
     <>
-      {state.jobs.length ? (
+      {jobs.length ? (
         <section>
           <Title>ESPERIENZE</Title>
           <div>
-            {state.jobs.map((job, i) => {
+            {jobs.map((job, i) => {
               return (
                 <div key={i}>
                   <SectionTitle>{job.jobTitle}</SectionTitle>

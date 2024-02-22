@@ -4,6 +4,7 @@ import Title from "../../atoms/Title";
 
 const Skills = () => {
   const skills = usePersonalInfo((s) => s.skills);
+  console.log("render");
   return (
     <section>
       <Title>SKILLS</Title>
