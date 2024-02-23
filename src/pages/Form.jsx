@@ -42,10 +42,10 @@ const Form = () => {
           isOpen
             ? "md:-translate-x-96 translate-x-0"
             : "md:translate-x-0 -translate-x-96"
-        } bg-white fixed w-96 h-screen z-10 transition-all p-4 overflow-y-auto`}
+        } bg-white fixed w-96 min-h-screen z-20 transition-all p-4 shadow-sm overflow-y-auto`}
       >
         <StepForm index={step} />
-        <div className="fixed bottom-2 z-20">
+        <div className="fixed bottom-2 z-30">
           <Buttons handleClick={prevStep}>Prev step</Buttons>
           <Buttons handleClick={nextStep}>Next step</Buttons>
           <Buttons handleClick={openSidebar}>open</Buttons>
@@ -56,7 +56,7 @@ const Form = () => {
         onClick={openSidebar}
         className={`${
           isOpen ? "ml-0" : "md:ml-96 ml-0"
-        } bg-gray-200 flex justify-center items-start transition-all p-8`}
+        } bg-gray-200 flex max-sm:h-[100svh] justify-center items-start transition-all p-8`}
       >
         <ResumePreview print={pageToPrint} />
       </div>

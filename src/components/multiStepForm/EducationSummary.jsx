@@ -2,22 +2,22 @@ import React from "react";
 import InputText from "../../atoms/InputText";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Buttons from "../../atoms/Buttons";
+import StepTitle from "../../atoms/StepTitle";
 
 const EducationSummary = () => {
-  const certificationTitle = usePersonalInfo(
-    (state) => state.certificationTitle
-  );
-  const certificationAdress = usePersonalInfo(
-    (state) => state.certificationAdress
-  );
-  const updateCertTitle = usePersonalInfo((state) => state.updateCertTitle);
-  const updateCertAdress = usePersonalInfo((state) => state.updateCertAdress);
-  const certifications = usePersonalInfo((state) => state.certifications);
-  const addCertifications = usePersonalInfo((state) => state.addCertifications);
+  const certificationTitle = usePersonalInfo((s) => s.certificationTitle);
+  const certificationAdress = usePersonalInfo((s) => s.certificationAdress);
+  const updateCertTitle = usePersonalInfo((s) => s.updateCertTitle);
+  const updateCertAdress = usePersonalInfo((s) => s.updateCertAdress);
+  const certifications = usePersonalInfo((s) => s.certifications);
+  const addCertifications = usePersonalInfo((s) => s.addCertifications);
+  const eTitle = usePersonalInfo((s) => s.eTitle);
+  const updateEtitle = usePersonalInfo((s) => s.updateEtitle);
+  const removeCertifications = usePersonalInfo((s) => s.removeCertifications);
 
   return (
     <div className="flex flex-col items-end gap-2 w-full">
-      <span className="text-xl w-full text-sky-700">Certificati</span>
+      <StepTitle title={eTitle} updateTitle={updateEtitle} />
       <InputText
         value={certificationTitle}
         onChange={(e) => updateCertTitle(e.target.value)}
@@ -34,7 +34,11 @@ const EducationSummary = () => {
       {certifications
         .map((c) => {
           return (
-            <div className="w-full block p-2 bg-gray-200 rounded-md" key={c.id}>
+            <div
+              onClick={() => removeCertifications(c.id)}
+              className="w-full block p-2 bg-gray-200 rounded-md"
+              key={c.id}
+            >
               <div className="text-xs">{c.certificationTitle}</div>
               <div className="text-[10px]">{c.certificationAdress}</div>
             </div>

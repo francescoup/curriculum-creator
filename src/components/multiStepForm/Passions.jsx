@@ -2,52 +2,51 @@ import React from "react";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
 import { IoMdClose } from "react-icons/io";
-
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
-const PersonalSkills = () => {
-  const fireSkills = (e) => {
+const Passions = () => {
+  const firePassions = (e) => {
     if (e.key === "Enter") {
-      addSkills();
+      addPassions();
     }
     return;
   };
-  const { id, skill, updateSkill, addSkills, skills, removeSkill } =
+  const { id, passion, updatePassion, addPassions, passions, removePassions } =
     usePersonalInfo(
       useShallow((s) => ({
         id: s.id,
-        skill: s.skill,
-        updateSkill: s.updateSkill,
-        skills: s.skills,
-        addSkills: s.addSkills,
-        removeSkill: s.removeSkill,
+        passion: s.passion,
+        updatePassion: s.updatePassion,
+        passions: s.passions,
+        addPassions: s.addPassions,
+        removePassions: s.removePassions,
       }))
     );
 
   return (
     <div className="flex flex-col gap-2 w-full items-end">
-      <span className="text-xl w-full text-sky-700">Skills</span>
+      <span className="text-xl w-full text-sky-700">Passioni</span>
       <InputText
-        value={skill}
-        onChange={(e) => updateSkill(e.target.value)}
-        label="Skills"
-        onkeydown={fireSkills}
+        value={passion}
+        onChange={(e) => updatePassion(e.target.value)}
+        label="Passioni"
+        onkeydown={firePassions}
       />
-      <Buttons handleClick={addSkills} size="small">
-        + Aggiungi le tue skills
+      <Buttons handleClick={addPassions} size="small">
+        + Aggiungi le tue passioni
       </Buttons>
       <div className="w-full flex flex-wrap gap-2">
-        {skills.map((s, i) => {
+        {passions.map((p, i) => {
           return (
             <div
               className="flex justify-between items-center gap-2 py-2 px-4 bg-gray-200 rounded-md text-xs text-sky-900"
-              key={s.id}
+              key={p.id}
             >
-              <span className="text-sky-600">{s.skill}</span>
+              <span className="text-sky-600">{p.passion}</span>
               <span
                 className="cursor-pointer text-lg text-sky-600"
-                onClick={() => removeSkill(s.id)}
+                onClick={() => removePassions(p.id)}
               >
                 <IoMdClose />
               </span>
@@ -59,4 +58,4 @@ const PersonalSkills = () => {
   );
 };
 
-export default PersonalSkills;
+export default Passions;

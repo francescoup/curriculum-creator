@@ -3,7 +3,7 @@ import { usePersonalInfo } from "../../store/useGlobalStore";
 import TextArea from "../../atoms/TextArea";
 
 const PersonalSummary = () => {
-  const summary = usePersonalInfo((state) => state.summary);
+  const summary = usePersonalInfo((s) => s.summary);
   const updateSummary = usePersonalInfo((state) => state.updateSummary);
   return (
     <div className="flex flex-col gap-2 w-full">

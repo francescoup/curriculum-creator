@@ -1,5 +1,6 @@
 export const personalInfoSlice = (set) => ({
   id: Date.now(),
+  stepTitle: "Informazioni personali",
   fullName: "",
   profileTitle: "",
   email: "",
@@ -19,5 +20,8 @@ export const personalInfoSlice = (set) => ({
   },
   updateProfileAdress(value) {
     set((state) => ({ ...state, profileAdress: value }));
+  },
+  updateStepTitle(value) {
+    set((state) => ({ stepTitle: value }));
   },
 });

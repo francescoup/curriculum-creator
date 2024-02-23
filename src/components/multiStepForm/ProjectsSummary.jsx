@@ -13,12 +13,12 @@ const ProjectsSummary = () => {
     updateProjectDescriptions,
     addProject,
   } = usePersonalInfo(
-    useShallow((state) => ({
-      projectName: state.projectName,
-      projectDescriptions: state.projectDescriptions,
-      updateProjectName: state.updateProjectName,
-      updateProjectDescriptions: state.updateProjectDescriptions,
-      addProject: state.addProject,
+    useShallow((s) => ({
+      projectName: s.projectName,
+      projectDescriptions: s.projectDescriptions,
+      updateProjectName: s.updateProjectName,
+      updateProjectDescriptions: s.updateProjectDescriptions,
+      addProject: s.addProject,
     }))
   );
   return (

@@ -4,19 +4,23 @@ import Title from "../../atoms/Title";
 import SectionTitle from "../../atoms/SectionTitle";
 
 const Certifications = () => {
-  const certificationTitle = usePersonalInfo(
-    (state) => state.certificationTitle
-  );
-  const certificationAdress = usePersonalInfo(
-    (state) => state.certificationAdress
-  );
+  const certifications = usePersonalInfo((s) => s.certifications);
+  const eTitle = usePersonalInfo((s) => s.eTitle);
 
   return (
     <div>
-      <Title>CERTIFICATI</Title>
+      <Title>{eTitle.toUpperCase()}</Title>
       <div>
-        <SectionTitle>{certificationTitle}</SectionTitle>
-        <div>{certificationAdress}</div>
+        {certifications.map((c) => {
+          return (
+            <div key={c.id}>
+              <SectionTitle>{c.certificationTitle}</SectionTitle>
+              <div className="text-xs text-gray-700">
+                {c.certificationAdress}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

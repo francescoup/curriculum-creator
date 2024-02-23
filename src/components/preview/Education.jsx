@@ -18,14 +18,14 @@ const Education = () => {
           return (
             <div key={e.id}>
               <h4 className="text-base">{e.eduTitle}</h4>
-              <p className="text-xs">{e.eduInstitute}</p>
+              <p className="text-xs text-gray-700">{e.eduInstitute}</p>
               <div className="flex justify-start gap-4 text-xs">
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 text-gray-700">
                   <span>{e.eduFrom}</span>
                   <span>-</span>
                   <span>{e.eduTo}</span>
                 </div>
-                <span>{e.eduAdress}</span>
+                <span className="text-gray-700">{e.eduAdress}</span>
               </div>
             </div>
           );

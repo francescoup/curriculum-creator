@@ -7,6 +7,7 @@ import EducationSummary from "./EducationSummary";
 import PersonalSkills from "./PersonalSkills";
 import ProjectsSummary from "./ProjectsSummary";
 import PersonalSummary from "./PersonalSummary";
+import Passions from "./Passions";
 
 const step = [
   <PersonalInformations />,
@@ -15,13 +16,14 @@ const step = [
   <ProfessionalSummary />,
   <AccademicSummary />,
   <EducationSummary />,
+  <Passions />,
   <ProjectsSummary />,
   <PersonalSkills />,
 ];
 
 const StepForm = ({ index }) => {
   return (
-    <div className="w-full mb-20  flex flex-col justify-between">
+    <div className="w-full mb-20 scroll-auto  flex flex-col justify-between">
       <div>{step[index]}</div>
     </div>
   );

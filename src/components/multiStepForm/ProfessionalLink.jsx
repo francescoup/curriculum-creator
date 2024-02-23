@@ -3,12 +3,12 @@ import InputText from "../../atoms/InputText";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const ProfessionalLink = () => {
-  const linkedin = usePersonalInfo((state) => state.linkedin);
-  const portfolio = usePersonalInfo((state) => state.portfolio);
-  const github = usePersonalInfo((state) => state.github);
-  const updateLinkedin = usePersonalInfo((state) => state.updateLinkedin);
-  const updatePortfolio = usePersonalInfo((state) => state.updatePortfolio);
-  const updateGithub = usePersonalInfo((state) => state.updateGithub);
+  const linkedin = usePersonalInfo((s) => s.linkedin);
+  const portfolio = usePersonalInfo((s) => s.portfolio);
+  const github = usePersonalInfo((s) => s.github);
+  const updateLinkedin = usePersonalInfo((s) => s.updateLinkedin);
+  const updatePortfolio = usePersonalInfo((s) => s.updatePortfolio);
+  const updateGithub = usePersonalInfo((s) => s.updateGithub);
   return (
     <div className="flex flex-col gap-2 w-full h-full ">
       <span className="text-xl text-sky-700">Link personali</span>
