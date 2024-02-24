@@ -2,11 +2,13 @@ import React, { useState, useMemo } from "react";
 import InputText from "../../atoms/InputText";
 import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
+import StepTitle from "../../atoms/StepTitle";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
 const ProfessionalSummary = () => {
   const {
+    jTitle,
     jobTitle,
     company,
     from,
@@ -14,6 +16,7 @@ const ProfessionalSummary = () => {
     adress,
     description,
     jobs,
+    updateJtitle,
     updateJobTitle,
     updateCompany,
     updateFrom,
@@ -24,6 +27,7 @@ const ProfessionalSummary = () => {
     removeJobs,
   } = usePersonalInfo(
     useShallow((s) => ({
+      jTitle: s.jTitle,
       jobTitle: s.jobTitle,
       company: s.company,
       from: s.from,
@@ -31,6 +35,7 @@ const ProfessionalSummary = () => {
       adress: s.adress,
       description: s.description,
       jobs: s.jobs,
+      updateJtitle: s.updateJtitle,
       updateJobTitle: s.updateJobTitle,
       updateCompany: s.updateCompany,
       updateFrom: s.updateFrom,
@@ -45,9 +50,8 @@ const ProfessionalSummary = () => {
   return (
     <>
       <div className="flex flex-col items-end gap-2 w-full">
-        <span className="text-xl w-full text-sky-700">
-          Esperienze lavorative
-        </span>
+        <StepTitle title={jTitle} updateTitle={updateJtitle} />
+
         <InputText
           value={jobTitle}
           onChange={(e) => updateJobTitle(e.target.value)}

@@ -1,13 +1,13 @@
 export const certificationsSlice = (set) => ({
-  eTitle: "Educazione",
+  certTitle: "Educazione",
   id: Date.now(),
   certificationTitle: "",
   certificationAdress: "",
   certifications: [],
-  updateEtitle(value) {
+  updatecertTitle(value) {
     set((state) => ({
       ...state,
-      eTitle: value,
+      certTitle: value,
     }));
   },
   updateCertTitle(value) {

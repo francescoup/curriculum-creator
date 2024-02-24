@@ -4,15 +4,16 @@ import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
 
 const Education = () => {
-  const { educations } = usePersonalInfo(
+  const { eTitle, educations } = usePersonalInfo(
     useShallow((state) => ({
+      eTitle: state.eTitle,
       educations: state.educations,
     }))
   );
 
   return (
     <section>
-      <Title>ISTRUZIONE</Title>
+      <Title>{eTitle.toUpperCase()}</Title>
       <div>
         {educations.map((e, i) => {
           return (

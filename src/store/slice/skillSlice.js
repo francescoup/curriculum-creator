@@ -1,7 +1,14 @@
 export const skillSlice = (set) => ({
+  skiTitle: "Skill",
   id: Date.now(),
   skill: "",
   skills: [],
+  updateSkiTitle(value) {
+    set((state) => ({
+      ...state,
+      skiTitle: value,
+    }));
+  },
   updateSkill(value) {
     set((state) => ({ ...state, skill: value }));
   },

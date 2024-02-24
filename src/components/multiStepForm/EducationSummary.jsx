@@ -1,8 +1,8 @@
 import React from "react";
 import InputText from "../../atoms/InputText";
-import { usePersonalInfo } from "../../store/useGlobalStore";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const EducationSummary = () => {
   const certificationTitle = usePersonalInfo((s) => s.certificationTitle);
@@ -11,13 +11,13 @@ const EducationSummary = () => {
   const updateCertAdress = usePersonalInfo((s) => s.updateCertAdress);
   const certifications = usePersonalInfo((s) => s.certifications);
   const addCertifications = usePersonalInfo((s) => s.addCertifications);
-  const eTitle = usePersonalInfo((s) => s.eTitle);
-  const updateEtitle = usePersonalInfo((s) => s.updateEtitle);
+  const certTitle = usePersonalInfo((s) => s.certTitle);
+  const updatecertTitle = usePersonalInfo((s) => s.updatecertTitle);
   const removeCertifications = usePersonalInfo((s) => s.removeCertifications);
 
   return (
     <div className="flex flex-col items-end gap-2 w-full">
-      <StepTitle title={eTitle} updateTitle={updateEtitle} />
+      <StepTitle title={certTitle} updateTitle={updatecertTitle} />
       <InputText
         value={certificationTitle}
         onChange={(e) => updateCertTitle(e.target.value)}

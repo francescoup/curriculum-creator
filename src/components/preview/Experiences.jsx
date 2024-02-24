@@ -5,9 +5,10 @@ import SectionTitle from "../../atoms/SectionTitle";
 import { useShallow } from "zustand/react/shallow";
 
 const Experiences = () => {
-  const { jobTitle, company, from, to, adress, description, jobs } =
+  const { jTitle, jobTitle, company, from, to, adress, description, jobs } =
     usePersonalInfo(
       useShallow((s) => ({
+        jTitle: s.jTitle,
         jobTitle: s.jobTitle,
         company: s.company,
         from: s.from,
@@ -21,7 +22,7 @@ const Experiences = () => {
     <>
       {jobs.length ? (
         <section>
-          <Title>ESPERIENZE</Title>
+          <Title>{jTitle.toUpperCase()}</Title>
           <div>
             {jobs.map((job, i) => {
               return (

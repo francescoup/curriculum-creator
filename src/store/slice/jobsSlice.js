@@ -1,4 +1,5 @@
 export const createJobsSlice = (set) => ({
+  jTitle: "Esperienze",
   id: Date.now(),
   jobTitle: "",
   company: "",
@@ -7,6 +8,11 @@ export const createJobsSlice = (set) => ({
   adress: "",
   description: "",
   jobs: [],
+  updateJtitle(value) {
+    set((state) => ({
+      jTitle: value,
+    }));
+  },
   updateJobTitle(value) {
     set((state) => ({ ...state, jobTitle: value }));
   },

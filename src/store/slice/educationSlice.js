@@ -1,12 +1,18 @@
 export const educationSlice = (set) => ({
+  eTitle: "Istruzione",
   id: Date.now(),
   eduTitle: "",
   eduInstitute: "",
   eduFrom: "",
   eduTo: "",
   eduAdress: "",
-
   educations: [],
+  updateETitle(value) {
+    set((state) => ({
+      ...state,
+      eTitle: value,
+    }));
+  },
   updateEduTitle(value) {
     set((state) => ({ ...state, eduTitle: value }));
   },

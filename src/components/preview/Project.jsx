@@ -5,10 +5,11 @@ import SectionTitle from "../../atoms/SectionTitle";
 
 const Project = () => {
   const projects = usePersonalInfo((state) => state.projects);
+  const proTitle = usePersonalInfo((s) => s.proTitle);
 
   return (
     <section>
-      <Title>PROGETTI</Title>
+      <Title>{proTitle.toUpperCase()}</Title>
 
       {projects.map((p, i) => {
         return (

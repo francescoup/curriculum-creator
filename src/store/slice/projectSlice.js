@@ -1,8 +1,15 @@
 export const projectSlice = (set) => ({
+  proTitle: "Progetti",
   id: Date.now(),
   projectName: "",
   projectDescriptions: "",
   projects: [],
+  updateProTitle(value) {
+    set((state) => ({
+      ...state,
+      proTitle: value,
+    }));
+  },
   updateProjectName(value) {
     set((state) => ({ ...state, projectName: value }));
   },

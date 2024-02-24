@@ -5,11 +5,11 @@ import SectionTitle from "../../atoms/SectionTitle";
 
 const Certifications = () => {
   const certifications = usePersonalInfo((s) => s.certifications);
-  const eTitle = usePersonalInfo((s) => s.eTitle);
+  const certTitle = usePersonalInfo((s) => s.certTitle);
 
   return (
     <div>
-      <Title>{eTitle.toUpperCase()}</Title>
+      <Title>{certTitle.toUpperCase()}</Title>
       <div>
         {certifications.map((c) => {
           return (

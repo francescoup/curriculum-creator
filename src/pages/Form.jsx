@@ -2,6 +2,7 @@ import React, { useState, useRef, use } from "react";
 import StepForm from "../components/multiStepForm/StepForm";
 import Buttons from "../atoms/Buttons";
 import ResumePreview from "../components/preview/ResumePreview";
+import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { useStore } from "../store/useGlobalStore";
@@ -36,7 +37,8 @@ const Form = () => {
   };
 
   return (
-    <div className=" w-full">
+    <div className=" w-full h-screen">
+      <Navbar />
       <aside
         className={`${
           isOpen
@@ -45,13 +47,13 @@ const Form = () => {
         } bg-white fixed w-96 min-h-screen z-20 transition-all p-4 shadow-sm overflow-y-auto`}
       >
         <StepForm index={step} />
-        <div className="fixed bottom-2 z-30">
-          <Buttons handleClick={prevStep}>Prev step</Buttons>
-          <Buttons handleClick={nextStep}>Next step</Buttons>
-          <Buttons handleClick={openSidebar}>open</Buttons>
-          <button onClick={printPage}>stampa</button>
-        </div>
       </aside>
+      <div className="fixed bg-sky-800 right-[50%]  bottom-8 z-30">
+        <Buttons handleClick={prevStep}>Prev step</Buttons>
+        <Buttons handleClick={nextStep}>Next step</Buttons>
+        <Buttons handleClick={openSidebar}>open</Buttons>
+        <button onClick={printPage}>stampa</button>
+      </div>
       <div
         onClick={openSidebar}
         className={`${

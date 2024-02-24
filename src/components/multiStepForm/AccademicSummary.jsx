@@ -3,14 +3,17 @@ import InputText from "../../atoms/InputText";
 import { useShallow } from "zustand/react/shallow";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Buttons from "../../atoms/Buttons";
+import StepTitle from "../../atoms/StepTitle";
 
 const AccademicSummary = () => {
   const {
+    eTitle,
     id,
     eduTitle,
     eduInstitute,
     eduFrom,
     eduTo,
+    updateETitle,
     eduAdress,
     updateEduTitle,
     updateEduInstitute,
@@ -19,24 +22,26 @@ const AccademicSummary = () => {
     updateEduAdress,
     addEdu,
   } = usePersonalInfo(
-    useShallow((state) => ({
-      id: state.id,
-      eduTitle: state.eduTitle,
-      eduInstitute: state.eduInstitute,
-      eduFrom: state.eduFrom,
-      eduTo: state.eduTo,
-      eduAdress: state.eduAdress,
-      updateEduTitle: state.updateEduTitle,
-      updateEduInstitute: state.updateEduInstitute,
-      updateEduFrom: state.updateEduFrom,
-      updateEduTo: state.updateEduTo,
-      updateEduAdress: state.updateEduAdress,
-      addEdu: state.addEdu,
+    useShallow((s) => ({
+      eTitle: s.eTitle,
+      id: s.id,
+      eduTitle: s.eduTitle,
+      eduInstitute: s.eduInstitute,
+      eduFrom: s.eduFrom,
+      eduTo: s.eduTo,
+      eduAdress: s.eduAdress,
+      updateETitle: s.updateETitle,
+      updateEduTitle: s.updateEduTitle,
+      updateEduInstitute: s.updateEduInstitute,
+      updateEduFrom: s.updateEduFrom,
+      updateEduTo: s.updateEduTo,
+      updateEduAdress: s.updateEduAdress,
+      addEdu: s.addEdu,
     }))
   );
   return (
     <div className="flex flex-col gap-2 w-full items-end">
-      <span className="text-xl w-full text-sky-700">Istruzione</span>
+      <StepTitle title={eTitle} updateTitle={updateETitle} />
       <InputText
         value={eduTitle}
         onChange={(e) => updateEduTitle(e.target.value)}

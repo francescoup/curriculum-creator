@@ -1,6 +1,7 @@
 import React from "react";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
+import StepTitle from "../../atoms/StepTitle";
 import { IoMdClose } from "react-icons/io";
 
 import { usePersonalInfo } from "../../store/useGlobalStore";
@@ -13,21 +14,31 @@ const PersonalSkills = () => {
     }
     return;
   };
-  const { id, skill, updateSkill, addSkills, skills, removeSkill } =
-    usePersonalInfo(
-      useShallow((s) => ({
-        id: s.id,
-        skill: s.skill,
-        updateSkill: s.updateSkill,
-        skills: s.skills,
-        addSkills: s.addSkills,
-        removeSkill: s.removeSkill,
-      }))
-    );
+  const {
+    id,
+    skiTitle,
+    skill,
+    updateSkiTitle,
+    updateSkill,
+    addSkills,
+    skills,
+    removeSkill,
+  } = usePersonalInfo(
+    useShallow((s) => ({
+      id: s.id,
+      skiTitle: s.skiTitle,
+      skill: s.skill,
+      updateSkiTitle: s.updateSkiTitle,
+      updateSkill: s.updateSkill,
+      skills: s.skills,
+      addSkills: s.addSkills,
+      removeSkill: s.removeSkill,
+    }))
+  );
 
   return (
     <div className="flex flex-col gap-2 w-full items-end">
-      <span className="text-xl w-full text-sky-700">Skills</span>
+      <StepTitle title={skiTitle} updateTitle={updateSkiTitle} />
       <InputText
         value={skill}
         onChange={(e) => updateSkill(e.target.value)}

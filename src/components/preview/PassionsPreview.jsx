@@ -4,10 +4,11 @@ import Title from "../../atoms/Title";
 
 const PassionsPreview = () => {
   const passions = usePersonalInfo((s) => s.passions);
+  const pasTitle = usePersonalInfo((s) => s.pasTitle);
 
   return (
     <section>
-      <Title>PASSIONI</Title>
+      <Title>{pasTitle.toUpperCase()}</Title>
 
       <div className="w-full flex flex-wrap gap-2">
         {passions.map((p, i) => {

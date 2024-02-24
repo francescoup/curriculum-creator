@@ -1,6 +1,7 @@
 import React from "react";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
+import StepTitle from "../../atoms/StepTitle";
 import { IoMdClose } from "react-icons/io";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
@@ -12,21 +13,31 @@ const Passions = () => {
     }
     return;
   };
-  const { id, passion, updatePassion, addPassions, passions, removePassions } =
-    usePersonalInfo(
-      useShallow((s) => ({
-        id: s.id,
-        passion: s.passion,
-        updatePassion: s.updatePassion,
-        passions: s.passions,
-        addPassions: s.addPassions,
-        removePassions: s.removePassions,
-      }))
-    );
+  const {
+    id,
+    pasTitle,
+    passion,
+    updatePasTitle,
+    updatePassion,
+    addPassions,
+    passions,
+    removePassions,
+  } = usePersonalInfo(
+    useShallow((s) => ({
+      id: s.id,
+      pasTitle: s.pasTitle,
+      passion: s.passion,
+      updatePasTitle: s.updatePasTitle,
+      updatePassion: s.updatePassion,
+      passions: s.passions,
+      addPassions: s.addPassions,
+      removePassions: s.removePassions,
+    }))
+  );
 
   return (
     <div className="flex flex-col gap-2 w-full items-end">
-      <span className="text-xl w-full text-sky-700">Passioni</span>
+      <StepTitle title={pasTitle} updateTitle={updatePasTitle} />
       <InputText
         value={passion}
         onChange={(e) => updatePassion(e.target.value)}

@@ -1,7 +1,14 @@
 export const linkSlice = (set) => ({
+  linkTitle: "Link personali",
   linkedin: "",
   portfolio: "",
   github: "",
+  updateLinkTitle(value) {
+    set((state) => ({
+      ...state,
+      linkTitle: value,
+    }));
+  },
   updateLinkedin(value) {
     set((state) => ({
       ...state,

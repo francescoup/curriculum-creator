@@ -1,13 +1,16 @@
 import React from "react";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import TextArea from "../../atoms/TextArea";
+import StepTitle from "../../atoms/StepTitle";
 
 const PersonalSummary = () => {
+  const summaryTitle = usePersonalInfo((s) => s.summaryTitle);
   const summary = usePersonalInfo((s) => s.summary);
+  const updateSummaryTitle = usePersonalInfo((s) => s.updateSummaryTitle);
   const updateSummary = usePersonalInfo((state) => state.updateSummary);
   return (
     <div className="flex flex-col gap-2 w-full">
-      <span className="text-xl text-sky-700">Descrizione</span>
+      <StepTitle title={summaryTitle} updateTitle={updateSummaryTitle} />
       <TextArea
         value={summary}
         text="Inserisci una breve descrizione del tuo percorso professionale."

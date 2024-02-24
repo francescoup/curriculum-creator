@@ -1,7 +1,14 @@
 export const passionlice = (set) => ({
+  pasTitle: "Passioni",
   id: Date.now(),
   passion: "",
   passions: [],
+  updatePasTitle(value) {
+    set((state) => ({
+      ...state,
+      pasTitle: value,
+    }));
+  },
   updatePassion(value) {
     set((state) => ({ ...state, passion: value }));
   },

@@ -4,9 +4,11 @@ import Title from "../../atoms/Title";
 
 const Summary = () => {
   const summary = usePersonalInfo((state) => state.summary);
+  const summaryTitle = usePersonalInfo((s) => s.summaryTitle);
+
   return (
     <section>
-      <Title>SUMMARY</Title>
+      <Title>{summaryTitle.toUpperCase()}</Title>
       <div>
         <p className="text-xs text-gray-700">{summary}</p>
       </div>

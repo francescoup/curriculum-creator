@@ -4,10 +4,11 @@ import Title from "../../atoms/Title";
 
 const Skills = () => {
   const skills = usePersonalInfo((s) => s.skills);
+  const skiTitle = usePersonalInfo((s) => s.skiTitle);
   console.log("render");
   return (
     <section>
-      <Title>SKILLS</Title>
+      <Title>{skiTitle.toUpperCase()}</Title>
 
       <div className="w-full flex flex-wrap gap-2">
         {skills.map((s, i) => {
