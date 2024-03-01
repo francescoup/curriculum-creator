@@ -22,11 +22,7 @@ const Form = () => {
     addStep();
   };
   const prevStep = () => {
-    if (step === 0) {
-      navigate("/template");
-    } else {
-      downStep();
-    }
+    downStep();
   };
 
   const openSidebar = () => {
@@ -35,10 +31,11 @@ const Form = () => {
   const test = {
     tipo: step,
   };
-
+  console.log("step is:" + step);
+  console.log(StepForm);
   return (
     <div className=" w-full h-screen">
-      <Navbar />
+      <Navbar print={printPage} />
       <aside
         className={`${
           isOpen
@@ -48,17 +45,21 @@ const Form = () => {
       >
         <StepForm index={step} />
       </aside>
-      <div className="fixed bg-sky-800 right-[50%]  bottom-8 z-30">
+      <div className="fixed bottom-[10px] bg-white border-2 p-2 rounded-full border-gray-200 max-sm:w-[90%] left-1/2 -translate-x-1/2  z-30">
         <Buttons handleClick={prevStep}>Prev step</Buttons>
-        <Buttons handleClick={nextStep}>Next step</Buttons>
+        <Buttons
+          disabled={10 === step + 1 ? true : false}
+          handleClick={nextStep}
+        >
+          Next step
+        </Buttons>
         <Buttons handleClick={openSidebar}>open</Buttons>
-        <button onClick={printPage}>stampa</button>
       </div>
       <div
         onClick={openSidebar}
         className={`${
           isOpen ? "ml-0" : "md:ml-96 ml-0"
-        } bg-gray-200 flex max-sm:h-[100svh] justify-center items-start transition-all p-8`}
+        } bg-gray-200 flex max-sm:h-[100svh] justify-center items-start transition-all px-8 py-[90px]`}
       >
         <ResumePreview print={pageToPrint} />
       </div>

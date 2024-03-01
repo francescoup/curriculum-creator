@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="grid grid-cols-1 md:grid-cols-5 gap-3 items-start h-full bg-white px-4 py-4 md:px-20">
+    <header className="grid grid-cols-1 md:grid-cols-5 mt-[64px] gap-3 items-start h-full bg-white px-4 py-4 md:px-20">
       <div className="md:col-span-3">
         <h1 className="text-4xl md:text-7xl text-gray-950">
           Create il vostro CV <br /> in pochi minuti
@@ -15,7 +15,7 @@ const Header = () => {
           Crea il tuo cv professionale da developer facilmente e in 5 minuti
           seguendo 3 sempilci step!
         </p>
-        <Link to="/template">
+        <Link to="/form">
           <Buttons size="big">Costruisci il tuo CV</Buttons>
         </Link>
       </div>

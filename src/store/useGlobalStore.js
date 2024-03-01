@@ -9,6 +9,7 @@ import { linkSlice } from "./slice/linkSlice";
 import { certificationsSlice } from "./slice/certificationsSlice";
 import { personalInfoSlice } from "./slice/personalInfoSlice";
 import { passionlice } from "./slice/passionsSlice";
+import { styleSlice } from "./slice/styleSile";
 
 export const useStore = create(
   persist(
@@ -25,6 +26,7 @@ export const useStore = create(
 );
 
 export const usePersonalInfo = create((set) => ({
+  ...styleSlice(set),
   ...personalInfoSlice(set),
   ...createJobsSlice(set),
   ...educationSlice(set),

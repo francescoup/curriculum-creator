@@ -16,7 +16,11 @@ const StepTitle = ({ title, updateTitle }) => {
         {edit ? (
           <span className="flex text-xl w-full text-sky-700">{title}</span>
         ) : (
-          <input value={title} onChange={(e) => updateTitle(e.target.value)} />
+          <input
+            className="text-xl text-gray-400"
+            value={title}
+            onChange={(e) => updateTitle(e.target.value)}
+          />
         )}
       </div>
       <button className="text-sky-400" onClick={editTitle}>

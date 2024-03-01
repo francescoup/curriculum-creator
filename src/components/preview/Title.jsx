@@ -27,7 +27,7 @@ const Title = () => {
       github: state.github,
     }))
   );
-  const colors = "text-yellow-400";
+  const colors = "text-gray-400";
   return (
     <section>
       <h1 className=" text-2xl/6 text-gray-950">{fullName.toUpperCase()}</h1>

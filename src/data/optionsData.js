@@ -9,3 +9,23 @@ export const color = [
     color: "bg-slate-400",
   },
 ];
+
+export const colorsTitle = [
+  { textColor: "text-blue-400", bgColor: "bg-blue-400" },
+  { textColor: "text-red-400", bgColor: "bg-red-400" },
+  { textColor: "text-yellow-400", bgColor: "bg-yellow-400" },
+  { textColor: "text-green-400", bgColor: "bg-green-400" },
+  { textColor: "text-gray-400", bgColor: "bg-gray-400" },
+  { textColor: "text-green-400", bgColor: "bg-green-400" },
+  { textColor: "text-slate-800", bgColor: "bg-slate-800" },
+];
+
+export const colorsSubtitle = [
+  { textColor: "text-blue-400", bgColor: "bg-blue-400" },
+  { textColor: "text-red-400", bgColor: "bg-red-400" },
+  { textColor: "text-yellow-400", bgColor: "bg-yellow-400" },
+  { textColor: "text-green-400", bgColor: "bg-green-400" },
+  { textColor: "text-gray-400", bgColor: "bg-gray-400" },
+  { textColor: "text-green-400", bgColor: "bg-green-400" },
+  { textColor: "text-slate-800", bgColor: "bg-slate-800" },
+];

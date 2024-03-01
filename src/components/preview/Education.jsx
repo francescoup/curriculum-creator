@@ -2,6 +2,7 @@ import React from "react";
 import { useShallow } from "zustand/react/shallow";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
+import SectionTitle from "../../atoms/SectionTitle";
 
 const Education = () => {
   const { eTitle, educations } = usePersonalInfo(
@@ -18,7 +19,7 @@ const Education = () => {
         {educations.map((e, i) => {
           return (
             <div key={e.id}>
-              <h4 className="text-base">{e.eduTitle}</h4>
+              <SectionTitle>{e.eduTitle}</SectionTitle>
               <p className="text-xs text-gray-700">{e.eduInstitute}</p>
               <div className="flex justify-start gap-4 text-xs">
                 <div className="flex gap-2 text-gray-700">
