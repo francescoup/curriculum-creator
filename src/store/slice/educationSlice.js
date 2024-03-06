@@ -52,7 +52,7 @@ export const educationSlice = (set) => ({
   },
   removeEdu(id) {
     set((state) => ({
-      jobs: state.educations.filter((e) => e.id !== id),
+      educations: state.educations.filter((e) => e.id !== id),
     }));
   },
 });

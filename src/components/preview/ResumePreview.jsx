@@ -7,6 +7,7 @@ import Summary from "./Summary";
 import Title from "./Title";
 import Education from "./Education";
 import PassionsPreview from "./PassionsPreview";
+import Language from "./Language";
 
 const ResumePreview = ({ print }) => {
   return (
@@ -26,6 +27,7 @@ const ResumePreview = ({ print }) => {
           <Skills />
           <Project />
           <Certifications />
+          <Language />
         </div>
       </div>
     </div>

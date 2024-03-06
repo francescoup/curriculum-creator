@@ -16,7 +16,7 @@ const TemplateStyle = () => {
     <div className="w-full flex flex-col gap-2">
       <span className="text-xl text-sky-700">Informazioni personali</span>
       <LayoutSwitch />
-      <InputSelect label="font family" name="font family" options={color} />
+      {/* <InputSelect label="font family" name="font family" options={color} /> */}
       <ColorSwitch
         onChange={updateColorTitle}
         title="Colore Titoli"

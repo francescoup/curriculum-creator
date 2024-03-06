@@ -27,17 +27,12 @@ const Title = () => {
       github: state.github,
     }))
   );
-  const colors = "text-gray-400";
+
   return (
     <section>
       <h1 className=" text-2xl/6 text-gray-950">{fullName.toUpperCase()}</h1>
       <h2 className="text-lg text-sky-900">{profileTitle}</h2>
-      <div
-        className={twMerge(
-          "flex justify-between gap-2 text-xs text-gray-700",
-          colors
-        )}
-      >
+      <div className="flex gap-2 text-xs text-gray-700">
         {phone && (
           <span className="flex items-center gap-1">
             <FaPhoneAlt />

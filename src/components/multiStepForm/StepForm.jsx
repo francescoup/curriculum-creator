@@ -9,6 +9,7 @@ import ProjectsSummary from "./ProjectsSummary";
 import PersonalSummary from "./PersonalSummary";
 import Passions from "./Passions";
 import TemplateStyle from "./TemplateStyle";
+import LanguageSummary from "./LanguageSummary";
 
 const step = [
   <TemplateStyle />,
@@ -18,6 +19,7 @@ const step = [
   <ProfessionalSummary />,
   <AccademicSummary />,
   <EducationSummary />,
+  <LanguageSummary />,
   <Passions />,
   <ProjectsSummary />,
   <PersonalSkills />,

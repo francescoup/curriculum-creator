@@ -10,6 +10,17 @@ export const color = [
   },
 ];
 
+export const levelLanguage = [
+  "__",
+  "Nativo",
+  "a/1",
+  "a/2",
+  "b/1",
+  "b/2",
+  "c/1",
+  "c/2",
+];
+
 export const colorsTitle = [
   { textColor: "text-blue-400", bgColor: "bg-blue-400" },
   { textColor: "text-red-400", bgColor: "bg-red-400" },

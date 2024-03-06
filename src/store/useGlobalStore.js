@@ -10,6 +10,7 @@ import { certificationsSlice } from "./slice/certificationsSlice";
 import { personalInfoSlice } from "./slice/personalInfoSlice";
 import { passionlice } from "./slice/passionsSlice";
 import { styleSlice } from "./slice/styleSile";
+import { languagesSlice } from "./slice/languagesSlice";
 
 export const useStore = create(
   persist(
@@ -36,6 +37,7 @@ export const usePersonalInfo = create((set) => ({
   ...linkSlice(set),
   ...certificationsSlice(set),
   ...passionlice(set),
+  ...languagesSlice(set),
   resumes: [],
 
   addResume() {

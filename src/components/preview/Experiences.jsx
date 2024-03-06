@@ -26,7 +26,7 @@ const Experiences = () => {
           <div>
             {jobs.map((job, i) => {
               return (
-                <div key={i}>
+                <div className="mb-2" key={i}>
                   <SectionTitle>{job.jobTitle}</SectionTitle>
 
                   <div className="flex justify-start items-center gap-4 text-gray-700 text-xs">

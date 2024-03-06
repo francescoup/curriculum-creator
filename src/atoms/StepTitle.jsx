@@ -11,10 +11,10 @@ const StepTitle = ({ title, updateTitle }) => {
   };
 
   return (
-    <div className="flex justify-between items-center w-full">
+    <div className="flex justify-start gap-4 items-center w-full">
       <div>
         {edit ? (
-          <span className="flex text-xl w-full text-sky-700">{title}</span>
+          <span className="flex text-xl text-sky-700">{title}</span>
         ) : (
           <input
             className="text-xl text-gray-400"
@@ -23,7 +23,7 @@ const StepTitle = ({ title, updateTitle }) => {
           />
         )}
       </div>
-      <button className="text-sky-400" onClick={editTitle}>
+      <button className="text-sky-400 text-lg mt-1" onClick={editTitle}>
         <FiEdit2 />
       </button>
     </div>

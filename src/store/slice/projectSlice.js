@@ -31,4 +31,9 @@ export const projectSlice = (set) => ({
       projectDescriptions: "",
     }));
   },
+  removeProjects(value) {
+    set((state) => ({
+      projects: state.projects.filter((p) => p.id !== value),
+    }));
+  },
 });

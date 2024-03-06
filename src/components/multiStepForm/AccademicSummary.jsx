@@ -13,6 +13,7 @@ const AccademicSummary = () => {
     eduInstitute,
     eduFrom,
     eduTo,
+    educations,
     updateETitle,
     eduAdress,
     updateEduTitle,
@@ -21,6 +22,7 @@ const AccademicSummary = () => {
     updateEduTo,
     updateEduAdress,
     addEdu,
+    removeEdu,
   } = usePersonalInfo(
     useShallow((s) => ({
       eTitle: s.eTitle,
@@ -30,6 +32,7 @@ const AccademicSummary = () => {
       eduFrom: s.eduFrom,
       eduTo: s.eduTo,
       eduAdress: s.eduAdress,
+      educations: s.educations,
       updateETitle: s.updateETitle,
       updateEduTitle: s.updateEduTitle,
       updateEduInstitute: s.updateEduInstitute,
@@ -37,6 +40,7 @@ const AccademicSummary = () => {
       updateEduTo: s.updateEduTo,
       updateEduAdress: s.updateEduAdress,
       addEdu: s.addEdu,
+      removeEdu: s.removeEdu,
     }))
   );
   return (
@@ -72,6 +76,20 @@ const AccademicSummary = () => {
       <Buttons size="small" handleClick={addEdu}>
         + Aggiungi istruzione
       </Buttons>
+      {educations
+        ?.map((edu) => {
+          return (
+            <div
+              onClick={() => removeEdu(edu.id)}
+              className="w-full block p-2 bg-gray-200 rounded-md"
+              key={edu.id}
+            >
+              <div className="text-xs">{edu.eduTitle}</div>
+              <div className="text-[10px]">{edu.eduInstitute}</div>
+            </div>
+          );
+        })
+        .reverse()}
     </div>
   );
 };
