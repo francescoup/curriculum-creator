@@ -36,4 +36,10 @@ export const projectSlice = (set) => ({
       projects: state.projects.filter((p) => p.id !== value),
     }));
   },
+  editProject(value) {
+    set((state) => ({
+      ...state,
+      projects: value,
+    }));
+  },
 });

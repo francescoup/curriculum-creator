@@ -9,7 +9,7 @@ const InputSelect = ({ label, options, name, onChange }) => {
         <select
           name={name}
           onChange={onChange}
-          className=" w-full border h-8 rounded-sm bg-gray-200 py-0 pl-4 pr-9 text-gray-400 focus:outline-none focus:border-b-2 focus:border-b-sky-700 sm:text-sm"
+          className=" w-full border h-8 rounded-sm bg-gray-50 py-0 pl-4 pr-9 text-gray-400 focus:outline-none focus:border-b-2 focus:border-b-sky-700 sm:text-sm"
         >
           {options.map((element, i) => {
             return (

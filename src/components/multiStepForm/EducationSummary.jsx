@@ -2,6 +2,7 @@ import React from "react";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import EditCertifications from "../editForm/EditCertifications";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const EducationSummary = () => {
@@ -31,20 +32,7 @@ const EducationSummary = () => {
       <Buttons size="small" handleClick={addCertifications}>
         + Aggiungi i tuoi certificati
       </Buttons>
-      {certifications
-        .map((c) => {
-          return (
-            <div
-              onClick={() => removeCertifications(c.id)}
-              className="w-full block p-2 bg-gray-200 rounded-md"
-              key={c.id}
-            >
-              <div className="text-xs">{c.certificationTitle}</div>
-              <div className="text-[10px]">{c.certificationAdress}</div>
-            </div>
-          );
-        })
-        .reverse()}
+      <EditCertifications certification={certifications} />
     </div>
   );
 };

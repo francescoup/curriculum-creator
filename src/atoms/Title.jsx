@@ -5,9 +5,9 @@ import { usePersonalInfo } from "../store/useGlobalStore";
 const Title = ({ children }) => {
   const titleColor = usePersonalInfo((s) => s.titleColor);
   return (
-    <span className={twMerge("text-[10px] text-gray-400", titleColor)}>
+    <div className={twMerge("text-[10px] text-gray-400", titleColor)}>
       {children}
-    </span>
+    </div>
   );
 };
 

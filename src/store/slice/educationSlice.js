@@ -55,4 +55,10 @@ export const educationSlice = (set) => ({
       educations: state.educations.filter((e) => e.id !== id),
     }));
   },
+  editEdu(value) {
+    set((state) => ({
+      ...state,
+      educations: value,
+    }));
+  },
 });

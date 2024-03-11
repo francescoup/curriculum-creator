@@ -1,7 +1,6 @@
-import React from "react";
-import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
 import SectionTitle from "../../atoms/SectionTitle";
+import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
 const Experiences = () => {

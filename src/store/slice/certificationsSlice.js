@@ -43,4 +43,10 @@ export const certificationsSlice = (set) => ({
       certifications: state.certifications.filter((c) => c.id !== id),
     }));
   },
+  editCertification(value) {
+    set((state) => ({
+      ...state,
+      certifications: value,
+    }));
+  },
 });

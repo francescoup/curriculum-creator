@@ -4,6 +4,7 @@ import { useShallow } from "zustand/react/shallow";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import EditAccademy from "../editForm/EditAccademy";
 
 const AccademicSummary = () => {
   const {
@@ -76,20 +77,7 @@ const AccademicSummary = () => {
       <Buttons size="small" handleClick={addEdu}>
         + Aggiungi istruzione
       </Buttons>
-      {educations
-        ?.map((edu) => {
-          return (
-            <div
-              onClick={() => removeEdu(edu.id)}
-              className="w-full block p-2 bg-gray-200 rounded-md"
-              key={edu.id}
-            >
-              <div className="text-xs">{edu.eduTitle}</div>
-              <div className="text-[10px]">{edu.eduInstitute}</div>
-            </div>
-          );
-        })
-        .reverse()}
+      <EditAccademy accademy={educations} />
     </div>
   );
 };

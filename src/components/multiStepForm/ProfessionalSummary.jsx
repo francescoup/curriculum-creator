@@ -1,12 +1,16 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import InputText from "../../atoms/InputText";
 import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import Modal from "../Modal";
+import EditExperiences from "../editForm/EditExperiences";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
 const ProfessionalSummary = () => {
+  const [openModal, setOpenModal] = useState(-1);
+  const [id, setId] = useState("");
   const {
     jTitle,
     jobTitle,
@@ -25,6 +29,7 @@ const ProfessionalSummary = () => {
     updateDescription,
     addJobs,
     removeJobs,
+    editJobs,
   } = usePersonalInfo(
     useShallow((s) => ({
       jTitle: s.jTitle,
@@ -44,12 +49,13 @@ const ProfessionalSummary = () => {
       updateDescription: s.updateDescription,
       addJobs: s.addJobs,
       removeJobs: s.removeJobs,
+      editJobs: s.editJobs,
     }))
   );
 
   return (
     <>
-      <div className="flex flex-col items-end gap-2 w-full">
+      <div className="flex flex-col items-end gap-2 w-full relative">
         <StepTitle title={jTitle} updateTitle={updateJtitle} />
 
         <InputText
@@ -93,20 +99,7 @@ const ProfessionalSummary = () => {
         <Buttons size="small" handleClick={addJobs}>
           + Aggiungi esperienze
         </Buttons>
-        {jobs
-          .map((j) => {
-            return (
-              <div
-                onClick={() => removeJobs(j.id)}
-                className="w-full block p-2 bg-gray-200 rounded-md"
-                key={j.id}
-              >
-                <div className="text-xs">{j.jobTitle}</div>
-                <div className="text-[10px]">{j.company}</div>
-              </div>
-            );
-          })
-          .reverse()}
+        <EditExperiences jobs={jobs} />
       </div>
     </>
   );

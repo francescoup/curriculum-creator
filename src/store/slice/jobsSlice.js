@@ -59,4 +59,10 @@ export const createJobsSlice = (set) => ({
       jobs: state.jobs.filter((j) => j.id !== id),
     }));
   },
+  editJobs(value) {
+    set((state) => ({
+      ...state,
+      jobs: value,
+    }));
+  },
 });

@@ -3,6 +3,7 @@ import InputText from "../../atoms/InputText";
 import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import EditProjects from "../editForm/EditProjects";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
@@ -31,7 +32,7 @@ const ProjectsSummary = () => {
     }))
   );
   return (
-    <div className="flex flex-col items-end gap-2 w-full">
+    <div className="flex flex-col items-end gap-2 w-full relative">
       <StepTitle title={proTitle} updateTitle={updateProTitle} />
       <InputText
         value={projectName}
@@ -47,20 +48,7 @@ const ProjectsSummary = () => {
       <Buttons size="small" handleClick={addProject}>
         + Aggiungi i tuoi progetti
       </Buttons>
-      {projects
-        ?.map((p) => {
-          return (
-            <div
-              onClick={() => removeProjects(p.id)}
-              className="w-full block p-2 bg-gray-200 rounded-md"
-              key={p.id}
-            >
-              <div className="text-xs">{p.projectName}</div>
-              <div className="text-[10px]">{p.projectDescriptions}</div>
-            </div>
-          );
-        })
-        .reverse()}
+      <EditProjects project={projects} />
     </div>
   );
 };
