@@ -11,13 +11,13 @@ const StepTitle = ({ title, updateTitle }) => {
   };
 
   return (
-    <div className="flex justify-start gap-4 items-center w-full">
+    <div className="flex justify-between gap-4 items-center w-full">
       <div>
         {edit ? (
           <span className="flex text-xl text-sky-700">{title}</span>
         ) : (
           <input
-            className="text-xl text-gray-400"
+            className="text-xl text-gray-400 focus:outline-none focus:border-b-2 focus:border-b-sky-700"
             value={title}
             onChange={(e) => updateTitle(e.target.value)}
           />
