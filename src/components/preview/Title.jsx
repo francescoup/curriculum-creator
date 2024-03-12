@@ -54,7 +54,10 @@ const Title = () => {
         {github && (
           <span className="flex items-center gap-1">
             <FaLink />
-            {github}
+
+            <a href={github} rel="noopener noreferrer">
+              {github}
+            </a>
           </span>
         )}
         {profileAdress && (

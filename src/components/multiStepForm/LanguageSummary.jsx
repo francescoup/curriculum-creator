@@ -35,7 +35,7 @@ const LanguageSummary = () => {
   return (
     <div className="flex flex-col gap-2 w-full items-end">
       <StepTitle title={languageTitle} updateTitle={updateLanguageTitle} />
-      <div className="grid grid-cols-5 gap-1">
+      <div className="grid w-full grid-cols-5 gap-1">
         <InputText
           value={language}
           onChange={(e) => updateLanguage(e.target.value)}
@@ -54,7 +54,7 @@ const LanguageSummary = () => {
         {languages.map((l, i) => {
           return (
             <div
-              className="flex justify-between items-center gap-2 py-2 px-4 bg-gray-200 rounded-md text-xs text-sky-900"
+              className="flex justify-between items-center gap-2 py-2 px-4 bg-gray-50 border rounded-sm text-xs text-sky-900"
               key={l.id}
             >
               <div className="text-sky-600">{l.language}</div>

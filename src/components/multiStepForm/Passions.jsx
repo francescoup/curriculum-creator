@@ -51,7 +51,7 @@ const Passions = () => {
         {passions.map((p, i) => {
           return (
             <div
-              className="flex justify-between items-center gap-2 py-2 px-4 bg-gray-200 rounded-md text-xs text-sky-900"
+              className="flex justify-between items-center gap-2 border py-2 px-4 bg-gray-50 rounded-sm text-xs text-sky-900"
               key={p.id}
             >
               <span className="text-sky-600">{p.passion}</span>

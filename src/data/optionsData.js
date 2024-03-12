@@ -11,7 +11,7 @@ export const color = [
 ];
 
 export const levelLanguage = [
-  "__",
+  "Livello",
   "Nativo",
   "a/1",
   "a/2",

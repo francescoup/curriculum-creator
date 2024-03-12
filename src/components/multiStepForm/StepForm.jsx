@@ -27,7 +27,7 @@ const step = [
 
 const StepForm = ({ index }) => {
   return (
-    <div className="w-full mb-20 scroll-auto  flex flex-col justify-between">
+    <div className="w-full mb-20  flex flex-col justify-between">
       <div>{step[index]}</div>
     </div>
   );

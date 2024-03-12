@@ -52,7 +52,7 @@ const PersonalSkills = () => {
         {skills.map((s, i) => {
           return (
             <div
-              className="flex justify-between items-center gap-2 py-2 px-4 bg-gray-200 rounded-md text-xs text-sky-900"
+              className="flex justify-between items-center border gap-2 py-2 px-4 bg-gray-50 rounded-sm text-xs text-sky-900"
               key={s.id}
             >
               <span className="text-sky-600">{s.skill}</span>

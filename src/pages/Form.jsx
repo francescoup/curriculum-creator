@@ -34,18 +34,18 @@ const Form = () => {
   console.log("step is:" + step);
   console.log(StepForm);
   return (
-    <div className=" w-full h-screen">
+    <div className="bg-gray-200 w-full h-screen">
       <aside
         className={`${
           isOpen
-            ? "md:-translate-x-96 translate-x-0"
-            : "md:translate-x-0 -translate-x-96"
-        } bg-white fixed w-96 min-h-screen z-20 transition-all p-4 shadow-sm overflow-y-auto`}
+            ? "md:-translate-x-96 -translate-x-full"
+            : "md:translate-x-0 translate-x-0"
+        } bg-white fixed w-full h-full md:w-96  z-20 transition-all p-4 shadow-sm overflow-y-auto`}
       >
         <StepForm index={step} />
       </aside>
-      {/* <Navbar print={printPage} /> */}
-      <div className="fixed bottom-[10px] bg-white border-2 p-2 rounded-full border-gray-200 max-sm:w-[90%] left-1/2 -translate-x-1/2  z-30">
+      <Navbar print={printPage} />
+      {/* <div className="fixed bottom-[10px] bg-white border-2 p-2 rounded-full border-gray-200 max-sm:w-[90%] left-1/2 -translate-x-1/2  z-30">
         <Buttons handleClick={prevStep}>Prev step</Buttons>
         <Buttons
           disabled={11 === step + 1 ? true : false}
@@ -54,12 +54,12 @@ const Form = () => {
           Next step
         </Buttons>
         <Buttons handleClick={openSidebar}>open</Buttons>
-      </div>
+      </div> */}
       <div
         onClick={openSidebar}
         className={`${
           isOpen ? "ml-0" : "md:ml-96 ml-0"
-        } bg-gray-200 flex max-sm:h-[100svh] justify-center items-start transition-all px-8 py-[90px]`}
+        } bg-gray-200 flex  justify-center items-start transition-all px-8`}
       >
         <ResumePreview print={pageToPrint} />
       </div>

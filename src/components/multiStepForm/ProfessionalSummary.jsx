@@ -63,7 +63,7 @@ const ProfessionalSummary = () => {
           onChange={(e) => updateJobTitle(e.target.value)}
           label="Titolo"
         />
-        <div className="flex gap-4">
+        <div className="flex w-full gap-2">
           <InputText
             value={company}
             onChange={(e) => updateCompany(e.target.value)}
@@ -77,7 +77,7 @@ const ProfessionalSummary = () => {
           />
         </div>
 
-        <div className="flex w-full gap-4">
+        <div className="flex w-full gap-2">
           <InputText
             value={from}
             onChange={(e) => updateFrom(e.target.value)}
