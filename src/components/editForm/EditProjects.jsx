@@ -43,6 +43,12 @@ const EditProjects = ({ project }) => {
               onChange={(e) => editField(e)}
               label="Titolo del progetto"
             />
+            <InputText
+              value={p.projectLink}
+              name="projectLink"
+              onChange={(e) => editField(e)}
+              label="Link al progetto"
+            />
 
             <TextArea
               value={p.projectDescriptions}

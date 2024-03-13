@@ -13,7 +13,6 @@ const ColorSwitch = ({ title, colors, onChange }) => {
       }))
     );
 
-  console.log(titleColor);
   return (
     <div className="flex flex-col gap-2 w-full">
       <span className="text-gray-400 w-full text-sm">{title}</span>

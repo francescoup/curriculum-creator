@@ -12,10 +12,12 @@ const ProjectsSummary = () => {
     proTitle,
     projectName,
     projectDescriptions,
+    projectLink,
     projects,
     updateProTitle,
     updateProjectName,
     updateProjectDescriptions,
+    updateProjectLink,
     addProject,
     removeProjects,
   } = usePersonalInfo(
@@ -23,10 +25,12 @@ const ProjectsSummary = () => {
       proTitle: s.proTitle,
       projectName: s.projectName,
       projectDescriptions: s.projectDescriptions,
+      projectLink: s.projectLink,
       projects: s.projects,
       updateProTitle: s.updateProTitle,
       updateProjectName: s.updateProjectName,
       updateProjectDescriptions: s.updateProjectDescriptions,
+      updateProjectLink: s.updateProjectLink,
       addProject: s.addProject,
       removeProjects: s.removeProjects,
     }))
@@ -38,6 +42,11 @@ const ProjectsSummary = () => {
         value={projectName}
         onChange={(e) => updateProjectName(e.target.value)}
         label="Titolo del progetto"
+      />
+      <InputText
+        value={projectLink}
+        onChange={(e) => updateProjectLink(e.target.value)}
+        label="Link al progetto"
       />
 
       <TextArea

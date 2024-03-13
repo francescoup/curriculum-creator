@@ -3,6 +3,7 @@ export const projectSlice = (set) => ({
   id: Date.now(),
   projectName: "",
   projectDescriptions: "",
+  projectLink: "",
   projects: [],
   updateProTitle(value) {
     set((state) => ({
@@ -16,6 +17,12 @@ export const projectSlice = (set) => ({
   updateProjectDescriptions(value) {
     set((state) => ({ ...state, projectDescriptions: value }));
   },
+  updateProjectLink(value) {
+    set((state) => ({
+      ...state,
+      projectLink: value,
+    }));
+  },
   addProject() {
     set((state) => ({
       projects: [
@@ -24,11 +31,13 @@ export const projectSlice = (set) => ({
           id: state.id,
           projectName: state.projectName,
           projectDescriptions: state.projectDescriptions,
+          projectLink: state.projectLink,
         },
       ],
       id: Date.now(),
       projectName: "",
       projectDescriptions: "",
+      projectLink: "",
     }));
   },
   removeProjects(value) {
