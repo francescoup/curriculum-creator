@@ -52,7 +52,7 @@ const EditAccademy = ({ accademy }) => {
 
               <InputText
                 value={a.eduAdress}
-                name="adress"
+                name="eduAdress"
                 onChange={(e) => onChange(e)}
                 label="Luogo"
               />
