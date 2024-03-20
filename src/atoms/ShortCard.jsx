@@ -1,11 +1,16 @@
 import React from "react";
 import Title from "./Title";
 import SectionTitle from "./SectionTitle";
+import { Reorder, useMotionValue } from "framer-motion";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 
-const ShortCard = ({ title, subTitle, handleClick }) => {
+const ShortCard = ({ title, subTitle, handleClick, value }) => {
+  const y = useMotionValue(0);
   return (
-    <div
+    <Reorder.Item
+      id={value.id}
+      value={value}
+      style={{ y }}
       onClick={handleClick}
       className="w-full flex items-center justify-between p-2 bg-gray-50 rounded-sm border mb-2"
     >
@@ -16,7 +21,7 @@ const ShortCard = ({ title, subTitle, handleClick }) => {
       <div className="text-gray-800 text-xl cursor-pointer">
         <HiOutlineDotsVertical />
       </div>
-    </div>
+    </Reorder.Item>
   );
 };
 
