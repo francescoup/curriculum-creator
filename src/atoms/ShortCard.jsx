@@ -7,10 +7,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 const ShortCard = ({ title, subTitle, handleClick, value }) => {
   const y = useMotionValue(0);
   return (
-    <Reorder.Item
-      id={value.id}
-      value={value}
-      style={{ y }}
+    <div
       onClick={handleClick}
       className="w-full flex items-center justify-between p-2 bg-gray-50 rounded-sm border mb-2"
     >
@@ -21,7 +18,7 @@ const ShortCard = ({ title, subTitle, handleClick, value }) => {
       <div className="text-gray-800 text-xl cursor-pointer">
         <HiOutlineDotsVertical />
       </div>
-    </Reorder.Item>
+    </div>
   );
 };
 

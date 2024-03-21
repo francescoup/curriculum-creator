@@ -12,7 +12,7 @@ const InputText = ({ name, label, onChange, onkeydown, value, type }) => {
           value={value}
           onChange={onChange}
           onKeyDown={onkeydown}
-          className=" w-full border h-10  bg-white py-0 px-1 rounded-sm text-gray-400 focus:outline-none focus:border-b-2 focus:border-b-sky-700"
+          className=" w-full border h-10  bg-white py-0 px-1 mt-2 rounded-sm text-gray-400 focus:outline-none focus:border-b-2 focus:border-b-sky-700"
         />
       </label>
     </>

@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Modal = ({ children }) => {
   return (
-    <div className="h-auto w-full top-0 left-0 absolute bg-white border border-gray-500 p-4">
+    <motion.div
+      initial={{ opacity: 1, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 1, y: -20 }}
+      className="h-auto w-full top-0 left-0 fixed p-4 bg-white"
+    >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

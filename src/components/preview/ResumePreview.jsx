@@ -12,8 +12,7 @@ import Navbar from "../Navbar";
 
 const ResumePreview = ({ print, printPage }) => {
   return (
-    <div>
-      <Navbar print={printPage} />
+    <>
       <div
         ref={print}
         className="bg-white border shadow-xl md:w-[210mm] min-w-[210mm] min-h-[297mm] max-sm:scale-[.45]  max-sm:origin-top  p-14  print:w-full print:shadow-none"
@@ -34,7 +33,7 @@ const ResumePreview = ({ print, printPage }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

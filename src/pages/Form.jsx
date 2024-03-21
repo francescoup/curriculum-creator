@@ -41,14 +41,15 @@ const Form = () => {
         <StepForm index={step} />
       </aside>
       <div className="fixed bottom-[10px] bg-white border-2 p-2 rounded-full border-gray-200 max-sm:w-[90%] left-1/2 -translate-x-1/2  z-30">
-        <Buttons handleClick={prevStep}>Prev step</Buttons>
+        <Buttons handleClick={prevStep}>Prev</Buttons>
         <Buttons
           disabled={11 === step + 1 ? true : false}
           handleClick={nextStep}
         >
-          Next step
+          Next
         </Buttons>
         <Buttons handleClick={openSidebar}>open</Buttons>
+        <Buttons handleClick={printPage}>print</Buttons>
       </div>
       <div
         className={`${
