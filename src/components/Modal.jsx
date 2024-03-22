@@ -7,7 +7,7 @@ const Modal = ({ children }) => {
       initial={{ opacity: 1, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 1, y: -20 }}
-      className="h-auto w-full top-0 left-0 fixed p-4 bg-white"
+      className="h-full w-full top-0 left-0 fixed p-4 bg-white shadow-md z-10 "
     >
       {children}
     </motion.div>
