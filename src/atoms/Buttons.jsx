@@ -8,8 +8,8 @@ const Buttons = ({ handleClick, children, type, size, disabled }) => {
       disabled={disabled}
       className={`${
         size === "small"
-          ? " flex justify-center items-center py-2  text-xs text-[#623BFF] hover:-translate-x-2 transition-all "
-          : "bg-green-600 hover:bg-green-800 py-3 px-6  rounded-full text-sm font-bold text-white"
+          ? " flex justify-center items-center py-2  text-xs font-bold text-[#e64c53] hover:-translate-x-2 transition-all "
+          : "bg-white md:flex md:justify-center md:items-center md:gap-2 hover:bg-green-500 hover:text-gray-50 disabled:text-gray-200 p-2  rounded-full text-xs md:text-sm font-semibold text-gray-800 transition-all"
       }`}
     >
       {children}

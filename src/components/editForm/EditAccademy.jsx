@@ -3,6 +3,7 @@ import ShortCard from "../../atoms/ShortCard";
 import Modal from "../Modal";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
+import { Reorder } from "framer-motion";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const EditAccademy = ({ accademy }) => {
@@ -14,6 +15,10 @@ const EditAccademy = ({ accademy }) => {
   useEffect(() => {
     setNewAccademy(accademy);
   }, [accademy]);
+
+  useEffect(() => {
+    editEdu(newAccademy);
+  }, [newAccademy]);
   const openModal = (newId) => {
     setId(newId);
     setEdit(newId);
@@ -27,58 +32,61 @@ const EditAccademy = ({ accademy }) => {
   };
   return (
     <div className="w-full">
-      {newAccademy.map((a) => {
-        return edit !== a.id ? (
-          <ShortCard
-            title={a.eduTitle}
-            subTitle={a.eduInstitute}
-            handleClick={() => openModal(a.id)}
-          />
-        ) : (
-          <Modal>
-            <InputText
-              value={a.eduTitle}
-              name="eduTitle"
-              onChange={(e) => onChange(e)}
-              label="Titolo"
+      <Reorder.Group axis="y" values={newAccademy} onReorder={setNewAccademy}>
+        {newAccademy.map((a) => {
+          return edit !== a.id ? (
+            <ShortCard
+              key={a.id}
+              title={a.eduTitle}
+              subTitle={a.eduInstitute}
+              value={a}
+              handleClick={() => openModal(a.id)}
             />
-            <div className="flex gap-4">
+          ) : (
+            <Modal>
               <InputText
-                value={a.eduInstitute}
-                name="eduInstitute"
+                value={a.eduTitle}
+                name="eduTitle"
                 onChange={(e) => onChange(e)}
-                label="Istituto"
+                label="Titolo"
               />
+              <div className="flex gap-4">
+                <InputText
+                  value={a.eduInstitute}
+                  name="eduInstitute"
+                  onChange={(e) => onChange(e)}
+                  label="Istituto"
+                />
 
-              <InputText
-                value={a.eduAdress}
-                name="eduAdress"
-                onChange={(e) => onChange(e)}
-                label="Luogo"
-              />
-            </div>
+                <InputText
+                  value={a.eduAdress}
+                  name="eduAdress"
+                  onChange={(e) => onChange(e)}
+                  label="Luogo"
+                />
+              </div>
 
-            <div className="flex w-full gap-4">
-              <InputText
-                value={a.eduFrom}
-                name="eduFrom"
-                onChange={(e) => onChange(e)}
-                label="Dal"
-              />
-              <InputText
-                value={a.eduTo}
-                name="eduTo"
-                onChange={(e) => onChange(e)}
-                label="Al"
-              />
-            </div>
+              <div className="flex w-full gap-4">
+                <InputText
+                  value={a.eduFrom}
+                  name="eduFrom"
+                  onChange={(e) => onChange(e)}
+                  label="Dal"
+                />
+                <InputText
+                  value={a.eduTo}
+                  name="eduTo"
+                  onChange={(e) => onChange(e)}
+                  label="Al"
+                />
+              </div>
 
-            <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
-            <Buttons handleClick={() => removeEdu(a.id)}>elimina</Buttons>
-            <Buttons handleClick={() => editEdu(newAccademy)}>edit</Buttons>
-          </Modal>
-        );
-      })}
+              <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
+              <Buttons handleClick={() => removeEdu(a.id)}>elimina</Buttons>
+            </Modal>
+          );
+        })}
+      </Reorder.Group>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import ResumePreview from "../components/preview/ResumePreview";
 import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { useStore } from "../store/useGlobalStore";
+import BottomBar from "../components/BottomBar";
 
 const Form = () => {
   const step = useStore((state) => state.step);
@@ -14,6 +15,7 @@ const Form = () => {
   const navigate = useNavigate();
 
   const pageToPrint = useRef(null);
+
   const printPage = useReactToPrint({
     content: () => pageToPrint.current,
   });
@@ -40,17 +42,15 @@ const Form = () => {
       >
         <StepForm index={step} />
       </aside>
-      <div className="fixed bottom-[10px] bg-white border-2 p-2 rounded-full border-gray-200 max-sm:w-[90%] left-1/2 -translate-x-1/2  z-30">
-        <Buttons handleClick={prevStep}>Prev</Buttons>
-        <Buttons
-          disabled={11 === step + 1 ? true : false}
-          handleClick={nextStep}
-        >
-          Next
-        </Buttons>
-        <Buttons handleClick={openSidebar}>open</Buttons>
-        <Buttons handleClick={printPage}>print</Buttons>
-      </div>
+      <BottomBar
+        isOpen={isOpen}
+        step={step}
+        nextStep={nextStep}
+        prevStep={prevStep}
+        openSidebar={openSidebar}
+        printPage={printPage}
+      />
+
       <div
         className={`${
           isOpen ? "ml-0" : "md:ml-96 ml-0"

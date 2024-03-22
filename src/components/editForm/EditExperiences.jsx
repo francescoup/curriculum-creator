@@ -4,6 +4,8 @@ import Modal from "../Modal";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
 import TextArea from "../../atoms/TextArea";
+
+import { Reorder } from "framer-motion";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const EditExperiences = ({ jobs }) => {
@@ -15,6 +17,11 @@ const EditExperiences = ({ jobs }) => {
   useEffect(() => {
     setNewJobs(jobs);
   }, [jobs]);
+
+  useEffect(() => {
+    editJobs(newJobs);
+  }, [newJobs]);
+
   const openModal = (newId) => {
     setId(newId);
     setEdit(newId);
@@ -28,65 +35,68 @@ const EditExperiences = ({ jobs }) => {
   };
   return (
     <div className="w-full">
-      {newJobs.map((j) => {
-        return edit !== j.id ? (
-          <ShortCard
-            title={j.jobTitle}
-            subTitle={j.company}
-            handleClick={() => openModal(j.id)}
-          />
-        ) : (
-          <Modal>
-            <InputText
-              value={j.jobTitle}
-              name="jobTitle"
-              onChange={(e) => onChange(e)}
-              label="Titolo"
+      <Reorder.Group axis="y" values={newJobs} onReorder={setNewJobs}>
+        {newJobs.map((j) => {
+          return edit !== j.id ? (
+            <ShortCard
+              key={j.id}
+              title={j.jobTitle}
+              subTitle={j.company}
+              value={j}
+              handleClick={() => openModal(j.id)}
             />
-            <div className="flex gap-4">
+          ) : (
+            <Modal>
               <InputText
-                value={j.company}
-                name="company"
+                value={j.jobTitle}
+                name="jobTitle"
                 onChange={(e) => onChange(e)}
-                label="Azienda"
+                label="Titolo"
+              />
+              <div className="flex gap-4">
+                <InputText
+                  value={j.company}
+                  name="company"
+                  onChange={(e) => onChange(e)}
+                  label="Azienda"
+                />
+
+                <InputText
+                  value={j.adress}
+                  name="adress"
+                  onChange={(e) => onChange(e)}
+                  label="Luogo"
+                />
+              </div>
+
+              <div className="flex w-full gap-4">
+                <InputText
+                  value={j.from}
+                  name="from"
+                  onChange={(e) => onChange(e)}
+                  label="Dal"
+                />
+                <InputText
+                  value={j.to}
+                  name="to"
+                  onChange={(e) => onChange(e)}
+                  label="Al"
+                />
+              </div>
+
+              <TextArea
+                value={j.description}
+                name="description"
+                onChange={(e) => onChange(e)}
+                label="Descrizione"
               />
 
-              <InputText
-                value={j.adress}
-                name="adress"
-                onChange={(e) => onChange(e)}
-                label="Luogo"
-              />
-            </div>
-
-            <div className="flex w-full gap-4">
-              <InputText
-                value={j.from}
-                name="from"
-                onChange={(e) => onChange(e)}
-                label="Dal"
-              />
-              <InputText
-                value={j.to}
-                name="to"
-                onChange={(e) => onChange(e)}
-                label="Al"
-              />
-            </div>
-
-            <TextArea
-              value={j.description}
-              name="description"
-              onChange={(e) => onChange(e)}
-              label="Descrizione"
-            />
-
-            <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
-            <Buttons handleClick={() => removeJobs(j.id)}>elimina</Buttons>
-            <Buttons handleClick={() => editJobs(newJobs)}>edit</Buttons>
-          </Modal>
-        );
-      })}
+              <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
+              <Buttons handleClick={() => removeJobs(j.id)}>elimina</Buttons>
+            </Modal>
+          );
+        })}
+      </Reorder.Group>
     </div>
   );
 };

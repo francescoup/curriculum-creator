@@ -22,7 +22,7 @@ const EditProjects = ({ project }) => {
   useEffect(() => {
     editProject(newProject);
   }, [newProject]);
-  const openModal = (e, newId) => {
+  const openModal = (newId) => {
     setId(newId);
     setEdit(newId);
   };
@@ -66,23 +66,13 @@ const EditProjects = ({ project }) => {
               </Buttons>
             </Modal>
           ) : (
-            <Reorder.Item
+            <ShortCard
               key={p.id}
+              title={p.projectName}
+              subTitle={p.projectDescriptions}
               value={p}
-              dragListener={true}
-              dragControls={dragControls}
-              onDragStart={() => setIsDrag(false)}
-              onDragEnd={() => setIsDrag(false)}
-              onClick={() => setIsDrag(true)}
-              onMouseLeave={() => setIsDrag(true)}
-            >
-              <ShortCard
-                title={p.projectName}
-                subTitle={p.projectDescriptions}
-                value={p}
-                handleClick={isdrag ? (e) => openModal(e, p.id) : null}
-              />
-            </Reorder.Item>
+              handleClick={() => openModal(p.id)}
+            />
           );
         })}
       </Reorder.Group>

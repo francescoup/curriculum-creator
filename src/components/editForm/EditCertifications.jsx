@@ -4,6 +4,7 @@ import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
 import Modal from "../Modal";
 import ShortCard from "../../atoms/ShortCard";
+import { Reorder } from "framer-motion";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const EditCertifications = ({ certification }) => {
@@ -15,6 +16,9 @@ const EditCertifications = ({ certification }) => {
   useEffect(() => {
     setNewCertification(certification);
   }, [certification]);
+  useEffect(() => {
+    editCertification(newCertification);
+  }, [newCertification]);
   const openModal = (newId) => {
     setId(newId);
     setEdit(newId);
@@ -28,38 +32,44 @@ const EditCertifications = ({ certification }) => {
   };
   return (
     <div className="w-full">
-      {newCertification?.map((c) => {
-        return edit !== c.id ? (
-          <ShortCard
-            title={c.certificationTitle}
-            subTitle={c.certificationAdress}
-            handleClick={() => openModal(c.id)}
-          />
-        ) : (
-          <Modal>
-            <InputText
-              value={c.certificationTitle}
-              name="certificationTitle"
-              onChange={(e) => editField(e)}
-              label="Titolo del certificato"
+      <Reorder.Group
+        axis="y"
+        values={newCertification}
+        onReorder={setNewCertification}
+      >
+        {newCertification?.map((c) => {
+          return edit !== c.id ? (
+            <ShortCard
+              key={c.id}
+              title={c.certificationTitle}
+              subTitle={c.certificationAdress}
+              value={c}
+              handleClick={() => openModal(c.id)}
             />
+          ) : (
+            <Modal>
+              <InputText
+                value={c.certificationTitle}
+                name="certificationTitle"
+                onChange={(e) => editField(e)}
+                label="Titolo del certificato"
+              />
 
-            <TextArea
-              value={c.certificationAdress}
-              name="certificationAdress"
-              onChange={(e) => editField(e)}
-              label="Istituto e luogo"
-            />
-            <Buttons handleClick={() => editCertification(newCertification)}>
-              edita
-            </Buttons>
-            <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
-            <Buttons handleClick={() => removeCertifications(c.id)}>
-              cancella
-            </Buttons>
-          </Modal>
-        );
-      })}
+              <TextArea
+                value={c.certificationAdress}
+                name="certificationAdress"
+                onChange={(e) => editField(e)}
+                label="Istituto e luogo"
+              />
+
+              <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
+              <Buttons handleClick={() => removeCertifications(c.id)}>
+                cancella
+              </Buttons>
+            </Modal>
+          );
+        })}
+      </Reorder.Group>
     </div>
   );
 };
