@@ -82,11 +82,13 @@ const ProfessionalSummary = () => {
             value={from}
             onChange={(e) => updateFrom(e.target.value)}
             label="Dal"
+            type="date"
           />
           <InputText
             value={to}
             onChange={(e) => updateTo(e.target.value)}
             label="Al"
+            type="date"
           />
         </div>
 

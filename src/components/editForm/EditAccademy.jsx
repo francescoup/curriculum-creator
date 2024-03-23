@@ -72,12 +72,14 @@ const EditAccademy = ({ accademy }) => {
                   name="eduFrom"
                   onChange={(e) => onChange(e)}
                   label="Dal"
+                  type="date"
                 />
                 <InputText
                   value={a.eduTo}
                   name="eduTo"
                   onChange={(e) => onChange(e)}
                   label="Al"
+                  type="date"
                 />
               </div>
 

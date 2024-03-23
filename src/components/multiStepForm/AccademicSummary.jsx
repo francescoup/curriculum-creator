@@ -67,11 +67,13 @@ const AccademicSummary = () => {
           value={eduFrom}
           onChange={(e) => updateEduFrom(e.target.value)}
           label="Dal"
+          type="date"
         />
         <InputText
           value={eduTo}
           onChange={(e) => updateEduTo(e.target.value)}
           label="Al"
+          type="date"
         />
       </div>
       <Buttons size="small" handleClick={addEdu}>

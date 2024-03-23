@@ -22,12 +22,12 @@ export const levelLanguage = [
 ];
 
 export const colorsTitle = [
-  { textColor: "text-blue-400", bgColor: "bg-blue-400" },
-  { textColor: "text-red-400", bgColor: "bg-red-400" },
-  { textColor: "text-yellow-400", bgColor: "bg-yellow-400" },
-  { textColor: "text-green-400", bgColor: "bg-green-400" },
-  { textColor: "text-gray-400", bgColor: "bg-gray-400" },
-  { textColor: "text-green-400", bgColor: "bg-green-400" },
+  { textColor: "text-blue-800", bgColor: "bg-blue-800" },
+  { textColor: "text-red-800", bgColor: "bg-red-800" },
+  { textColor: "text-yellow-800", bgColor: "bg-yellow-800" },
+  { textColor: "text-green-800", bgColor: "bg-green-800" },
+  { textColor: "text-gray-800", bgColor: "bg-gray-800" },
+  { textColor: "text-green-800", bgColor: "bg-green-800" },
   { textColor: "text-slate-800", bgColor: "bg-slate-800" },
 ];
 
@@ -38,5 +38,5 @@ export const colorsSubtitle = [
   { textColor: "text-green-400", bgColor: "bg-green-400" },
   { textColor: "text-gray-400", bgColor: "bg-gray-400" },
   { textColor: "text-green-400", bgColor: "bg-green-400" },
-  { textColor: "text-slate-800", bgColor: "bg-slate-800" },
+  { textColor: "text-slate-400", bgColor: "bg-slate-400" },
 ];

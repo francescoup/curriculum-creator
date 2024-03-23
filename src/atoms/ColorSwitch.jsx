@@ -22,7 +22,11 @@ const ColorSwitch = ({ title, colors, onChange }) => {
             <li
               onClick={() => onChange(color.textColor)}
               key={`${i}-${color}`}
-              className={`${color.bgColor} rounded-full w-10 h-10 hover:scale-90 transition-all`}
+              className={`${color.bgColor} ${
+                color.textColor == titleColor ? "border-4" : "null"
+              } ${
+                color.textColor == subTitleColor ? "border-4" : "null"
+              } rounded-full w-10 h-10 hover:scale-90 transition-all`}
             ></li>
           );
         })}

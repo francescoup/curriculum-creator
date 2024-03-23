@@ -75,12 +75,14 @@ const EditExperiences = ({ jobs }) => {
                   name="from"
                   onChange={(e) => onChange(e)}
                   label="Dal"
+                  type="date"
                 />
                 <InputText
                   value={j.to}
                   name="to"
                   onChange={(e) => onChange(e)}
                   label="Al"
+                  type="date"
                 />
               </div>
 

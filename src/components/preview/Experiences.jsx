@@ -1,5 +1,6 @@
 import Title from "../../atoms/Title";
 import SectionTitle from "../../atoms/SectionTitle";
+import formatDate from "../../utils/formatDate";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
@@ -17,6 +18,7 @@ const Experiences = () => {
         jobs: s.jobs,
       }))
     );
+
   return (
     <>
       {jobs.length ? (
@@ -31,9 +33,9 @@ const Experiences = () => {
                   <div className="flex justify-start items-center gap-4 text-gray-700 text-xs">
                     <div className="text-xs">{job.company}</div>
                     <div className="flex gap-1">
-                      <span>{job.from}</span>
+                      <span>{formatDate(job.from)}</span>
                       <span>-</span>
-                      <span>{job.to}</span>
+                      <span>{formatDate(job.to)}</span>
                     </div>
                     <span>{job.adress}</span>
                   </div>
