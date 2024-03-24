@@ -6,6 +6,7 @@ export const educationSlice = (set) => ({
   eduFrom: "",
   eduTo: "",
   eduAdress: "",
+  eChecked: false,
   educations: [],
   updateETitle(value) {
     set((state) => ({
@@ -28,6 +29,11 @@ export const educationSlice = (set) => ({
   updateEduAdress(value) {
     set((state) => ({ ...state, eduAdress: value }));
   },
+  updateEChecked() {
+    set((state) => ({
+      eChecked: !state.eChecked,
+    }));
+  },
 
   addEdu() {
     set((state) => ({
@@ -40,6 +46,7 @@ export const educationSlice = (set) => ({
           eduFrom: state.eduFrom,
           eduTo: state.eduTo,
           eduAdress: state.eduAdress,
+          eChecked: state.eChecked,
         },
       ],
       id: Date.now(),

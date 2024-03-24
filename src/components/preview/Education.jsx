@@ -26,7 +26,7 @@ const Education = () => {
                 <div className="flex gap-2 text-gray-700">
                   <span>{formatDate(e.eduFrom)}</span>
                   <span>-</span>
-                  <span>{formatDate(e.eduTo)}</span>
+                  <span>{!e.eduTo ? "In corso" : formatDate(e.eduTo)}</span>
                 </div>
                 <span className="text-gray-700">{e.eduAdress}</span>
               </div>

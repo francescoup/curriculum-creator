@@ -5,20 +5,30 @@ import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
 const Experiences = () => {
-  const { jTitle, jobTitle, company, from, to, adress, description, jobs } =
-    usePersonalInfo(
-      useShallow((s) => ({
-        jTitle: s.jTitle,
-        jobTitle: s.jobTitle,
-        company: s.company,
-        from: s.from,
-        to: s.to,
-        adress: s.adress,
-        description: s.description,
-        jobs: s.jobs,
-      }))
-    );
-
+  const {
+    jTitle,
+    jobTitle,
+    company,
+    from,
+    to,
+    adress,
+    description,
+    jCheched,
+    jobs,
+  } = usePersonalInfo(
+    useShallow((s) => ({
+      jTitle: s.jTitle,
+      jobTitle: s.jobTitle,
+      company: s.company,
+      from: s.from,
+      to: s.to,
+      adress: s.adress,
+      description: s.description,
+      jCheched: s.jCheched,
+      jobs: s.jobs,
+    }))
+  );
+  console.log(jCheched);
   return (
     <>
       {jobs.length ? (
@@ -35,7 +45,7 @@ const Experiences = () => {
                     <div className="flex gap-1">
                       <span>{formatDate(job.from)}</span>
                       <span>-</span>
-                      <span>{formatDate(job.to)}</span>
+                      <span>{!job.to ? "In corso" : formatDate(job.to)}</span>
                     </div>
                     <span>{job.adress}</span>
                   </div>

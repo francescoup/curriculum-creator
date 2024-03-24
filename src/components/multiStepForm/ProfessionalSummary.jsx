@@ -3,6 +3,7 @@ import InputText from "../../atoms/InputText";
 import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import Checkbox from "../../atoms/Checkbox";
 import Modal from "../Modal";
 import EditExperiences from "../editForm/EditExperiences";
 import { usePersonalInfo } from "../../store/useGlobalStore";
@@ -11,6 +12,11 @@ import { useShallow } from "zustand/react/shallow";
 const ProfessionalSummary = () => {
   const [openModal, setOpenModal] = useState(-1);
   const [id, setId] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+  const checked = () => {
+    setIsChecked(!isChecked);
+  };
+  console.log(isChecked);
   const {
     jTitle,
     jobTitle,
@@ -19,6 +25,7 @@ const ProfessionalSummary = () => {
     to,
     adress,
     description,
+    jChecked,
     jobs,
     updateJtitle,
     updateJobTitle,
@@ -27,6 +34,7 @@ const ProfessionalSummary = () => {
     updateTo,
     updateAdress,
     updateDescription,
+    updateJChecked,
     addJobs,
     removeJobs,
     editJobs,
@@ -39,6 +47,7 @@ const ProfessionalSummary = () => {
       to: s.to,
       adress: s.adress,
       description: s.description,
+      jChecked: s.jChecked,
       jobs: s.jobs,
       updateJtitle: s.updateJtitle,
       updateJobTitle: s.updateJobTitle,
@@ -47,12 +56,13 @@ const ProfessionalSummary = () => {
       updateTo: s.updateTo,
       updateAdress: s.updateAdress,
       updateDescription: s.updateDescription,
+      updateJChecked: s.updateJChecked,
       addJobs: s.addJobs,
       removeJobs: s.removeJobs,
       editJobs: s.editJobs,
     }))
   );
-
+  console.log(jChecked);
   return (
     <>
       <div className="flex flex-col items-end gap-2 w-full relative">
@@ -85,13 +95,14 @@ const ProfessionalSummary = () => {
             type="date"
           />
           <InputText
+            disabled={jChecked}
             value={to}
             onChange={(e) => updateTo(e.target.value)}
             label="Al"
             type="date"
           />
         </div>
-
+        <Checkbox value={jChecked} onChange={updateJChecked} />
         <TextArea
           value={description}
           onChange={(e) => updateDescription(e.target.value)}

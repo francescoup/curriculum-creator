@@ -7,6 +7,7 @@ export const createJobsSlice = (set) => ({
   to: "",
   adress: "",
   description: "",
+  jChecked: false,
   jobs: [],
   updateJtitle(value) {
     set((state) => ({
@@ -31,6 +32,11 @@ export const createJobsSlice = (set) => ({
   updateDescription(value) {
     set((state) => ({ ...state, description: value }));
   },
+  updateJChecked() {
+    set((state) => ({
+      jChecked: !state.jChecked,
+    }));
+  },
   addJobs() {
     set((state) => ({
       jobs: [
@@ -43,6 +49,7 @@ export const createJobsSlice = (set) => ({
           to: state.to,
           adress: state.adress,
           description: state.description,
+          jChecked: state.jChecked,
         },
       ],
       id: Date.now(),

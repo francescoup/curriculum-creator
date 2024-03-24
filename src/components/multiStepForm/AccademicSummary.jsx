@@ -5,6 +5,7 @@ import { usePersonalInfo } from "../../store/useGlobalStore";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
 import EditAccademy from "../editForm/EditAccademy";
+import Checkbox from "../../atoms/Checkbox";
 
 const AccademicSummary = () => {
   const {
@@ -17,11 +18,13 @@ const AccademicSummary = () => {
     educations,
     updateETitle,
     eduAdress,
+    eChecked,
     updateEduTitle,
     updateEduInstitute,
     updateEduFrom,
     updateEduTo,
     updateEduAdress,
+    updateEChecked,
     addEdu,
     removeEdu,
   } = usePersonalInfo(
@@ -33,6 +36,7 @@ const AccademicSummary = () => {
       eduFrom: s.eduFrom,
       eduTo: s.eduTo,
       eduAdress: s.eduAdress,
+      eChecked: s.eChecked,
       educations: s.educations,
       updateETitle: s.updateETitle,
       updateEduTitle: s.updateEduTitle,
@@ -40,10 +44,12 @@ const AccademicSummary = () => {
       updateEduFrom: s.updateEduFrom,
       updateEduTo: s.updateEduTo,
       updateEduAdress: s.updateEduAdress,
+      updateEChecked: s.updateEChecked,
       addEdu: s.addEdu,
       removeEdu: s.removeEdu,
     }))
   );
+  console.log(eChecked);
   return (
     <div className="flex flex-col gap-2 w-full items-end">
       <StepTitle title={eTitle} updateTitle={updateETitle} />
@@ -70,12 +76,14 @@ const AccademicSummary = () => {
           type="date"
         />
         <InputText
+          disabled={eChecked}
           value={eduTo}
           onChange={(e) => updateEduTo(e.target.value)}
           label="Al"
           type="date"
         />
       </div>
+      <Checkbox value={eChecked} onChange={updateEChecked} />
       <Buttons size="small" handleClick={addEdu}>
         + Aggiungi istruzione
       </Buttons>
