@@ -63,13 +63,13 @@ const EditProjects = ({ project }) => {
                 handleClick={() => removeProjects(p.id)}
                 className="bg-red-600 text-white"
               >
-                <Buttons
-                  handleClick={() => setEdit(-1)}
-                  className="border border-sky-400 hover:bg-sky-400"
-                >
-                  chiudi
-                </Buttons>
                 cancella
+              </Buttons>
+              <Buttons
+                handleClick={() => setEdit(-1)}
+                className="border border-sky-400 hover:bg-sky-400"
+              >
+                chiudi
               </Buttons>
             </Modal>
           ) : (

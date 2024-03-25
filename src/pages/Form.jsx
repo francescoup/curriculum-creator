@@ -24,9 +24,13 @@ const Form = () => {
 
   const nextStep = () => {
     addStep();
+    setSidebar(false);
+    setIsOpen(false);
   };
   const prevStep = () => {
     downStep();
+    setSidebar(false);
+    setIsOpen(false);
   };
 
   const openSidebar = () => {
