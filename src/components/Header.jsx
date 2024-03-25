@@ -16,7 +16,9 @@ const Header = () => {
           seguendo 3 sempilci step!
         </p>
         <Link to="/form">
-          <Buttons size="big">Costruisci il tuo CV</Buttons>
+          <Buttons size="big" className="bg-sky-700 py-2 px-4 text-white">
+            Costruisci il tuo CV
+          </Buttons>
         </Link>
       </div>
     </header>

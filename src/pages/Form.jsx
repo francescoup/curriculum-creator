@@ -6,12 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { useStore } from "../store/useGlobalStore";
 import BottomBar from "../components/BottomBar";
+import Sidebar from "../components/Sidebar";
 
 const Form = () => {
   const step = useStore((state) => state.step);
   const addStep = useStore((state) => state.addStep);
   const downStep = useStore((state) => state.downStep);
   const [isOpen, setIsOpen] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
   const navigate = useNavigate();
 
   const pageToPrint = useRef(null);
@@ -30,7 +32,9 @@ const Form = () => {
   const openSidebar = () => {
     setIsOpen(!isOpen);
   };
-
+  const openRightSidebar = () => {
+    setSidebar((prev) => !prev);
+  };
   return (
     <div className="bg-gray-200 overflow-hidden w-full h-screen">
       <aside
@@ -49,6 +53,8 @@ const Form = () => {
         prevStep={prevStep}
         openSidebar={openSidebar}
         printPage={printPage}
+        isRight={sidebar}
+        setSidebar={openRightSidebar}
       />
 
       <div
@@ -57,6 +63,7 @@ const Form = () => {
         } bg-gray-200 h-screen flex justify-center items-start md:overflow-y-auto  transition-all py-20 px-8`}
       >
         <ResumePreview print={pageToPrint} printPage={printPage} />
+        <Sidebar isRight={sidebar} />
       </div>
     </div>
   );

@@ -82,9 +82,19 @@ const EditAccademy = ({ accademy }) => {
                   type="date"
                 />
               </div>
+              <Buttons
+                handleClick={() => removeEdu(a.id)}
+                className="bg-red-600 text-white"
+              >
+                elimina
+              </Buttons>
 
-              <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
-              <Buttons handleClick={() => removeEdu(a.id)}>elimina</Buttons>
+              <Buttons
+                handleClick={() => setEdit(-1)}
+                className="border border-sky-400 hover:bg-sky-400"
+              >
+                chiudi
+              </Buttons>
             </Modal>
           );
         })}

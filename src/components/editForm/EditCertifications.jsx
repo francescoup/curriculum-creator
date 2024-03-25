@@ -62,9 +62,17 @@ const EditCertifications = ({ certification }) => {
                 label="Istituto e luogo"
               />
 
-              <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
-              <Buttons handleClick={() => removeCertifications(c.id)}>
+              <Buttons
+                handleClick={() => removeCertifications(c.id)}
+                className="bg-red-600 text-white"
+              >
                 cancella
+              </Buttons>
+              <Buttons
+                handleClick={() => setEdit(-1)}
+                className="border border-sky-400 hover:bg-sky-400"
+              >
+                chiudi
               </Buttons>
             </Modal>
           );

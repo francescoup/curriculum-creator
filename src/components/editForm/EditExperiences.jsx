@@ -92,9 +92,19 @@ const EditExperiences = ({ jobs }) => {
                 onChange={(e) => onChange(e)}
                 label="Descrizione"
               />
+              <Buttons
+                handleClick={() => removeJobs(j.id)}
+                className="bg-red-600 text-white"
+              >
+                elimina
+              </Buttons>
 
-              <Buttons handleClick={() => setEdit(-1)}>chiudi</Buttons>
-              <Buttons handleClick={() => removeJobs(j.id)}>elimina</Buttons>
+              <Buttons
+                handleClick={() => setEdit(-1)}
+                className="border border-sky-400 hover:bg-sky-400"
+              >
+                chiudi
+              </Buttons>
             </Modal>
           );
         })}

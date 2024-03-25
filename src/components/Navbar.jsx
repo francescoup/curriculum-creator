@@ -1,5 +1,6 @@
 import React from "react";
 import Buttons from "../atoms/Buttons";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ print }) => {
   return (
@@ -10,9 +11,7 @@ const Navbar = ({ print }) => {
         </span>
       </div>
       <div>
-        <Buttons size="small" handleClick={print}>
-          Stampa
-        </Buttons>
+        <Link to="/form">Inizia</Link>
       </div>
     </nav>
   );

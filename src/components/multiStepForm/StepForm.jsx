@@ -8,11 +8,9 @@ import PersonalSkills from "./PersonalSkills";
 import ProjectsSummary from "./ProjectsSummary";
 import PersonalSummary from "./PersonalSummary";
 import Passions from "./Passions";
-import TemplateStyle from "./TemplateStyle";
 import LanguageSummary from "./LanguageSummary";
 
 const step = [
-  <TemplateStyle />,
   <PersonalInformations />,
   <PersonalSummary />,
   <ProfessionalLink />,
