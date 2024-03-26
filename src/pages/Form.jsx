@@ -7,6 +7,7 @@ import { useReactToPrint } from "react-to-print";
 import { useStore } from "../store/useGlobalStore";
 import BottomBar from "../components/BottomBar";
 import Sidebar from "../components/Sidebar";
+import ProgressBar from "../components/ProgressBar";
 
 const Form = () => {
   const step = useStore((state) => state.step);
@@ -40,7 +41,7 @@ const Form = () => {
     setSidebar((prev) => !prev);
   };
   return (
-    <div className="bg-gray-200 overflow-hidden w-full h-screen">
+    <div className="bg-gray-600 overflow-hidden w-full h-screen">
       <aside
         className={`${
           isOpen
@@ -48,6 +49,7 @@ const Form = () => {
             : "md:translate-x-0 translate-x-0"
         } bg-white fixed top-0 left-0 w-full h-screen md:w-96 z-20 transition-all p-4 shadow-sm `}
       >
+        <ProgressBar value={step} />
         <StepForm index={step} />
       </aside>
       <BottomBar
@@ -64,7 +66,7 @@ const Form = () => {
       <div
         className={`${
           isOpen ? "ml-0" : "md:ml-96 ml-0"
-        } bg-gray-200 h-screen flex justify-center items-start md:overflow-y-auto  transition-all py-20 px-8`}
+        } bg-gray-600 h-screen flex justify-center items-start md:overflow-y-auto  transition-all py-20 px-8`}
       >
         <ResumePreview print={pageToPrint} printPage={printPage} />
         <Sidebar isRight={sidebar} />

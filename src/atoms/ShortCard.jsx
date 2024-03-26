@@ -22,7 +22,7 @@ const ShortCard = ({ title, subTitle, handleClick, value }) => {
     >
       <div
         onClick={isdrag ? handleClick : null}
-        className="w-full flex items-center justify-between p-2 bg-gray-50 rounded-md border mb-2"
+        className="w-full flex items-center justify-between p-2 bg-gray-50 rounded-sm border mb-2"
       >
         <div>
           <SectionTitle>{title}</SectionTitle>

@@ -9,6 +9,7 @@ import ProjectsSummary from "./ProjectsSummary";
 import PersonalSummary from "./PersonalSummary";
 import Passions from "./Passions";
 import LanguageSummary from "./LanguageSummary";
+import ProgressBar from "../ProgressBar";
 
 const step = [
   <PersonalInformations />,
