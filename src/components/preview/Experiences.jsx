@@ -28,7 +28,7 @@ const Experiences = () => {
       jobs: s.jobs,
     }))
   );
-  console.log(jCheched);
+
   return (
     <>
       {jobs.length ? (
@@ -37,7 +37,7 @@ const Experiences = () => {
           <div>
             {jobs.map((job, i) => {
               return (
-                <div className="mb-2" key={i}>
+                <div className="mb-4" key={i}>
                   <SectionTitle>{job.jobTitle}</SectionTitle>
 
                   <div className="flex justify-start items-center gap-4 text-gray-700 text-xs">

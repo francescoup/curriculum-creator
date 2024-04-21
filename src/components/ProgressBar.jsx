@@ -1,7 +1,4 @@
-import React from "react";
-
 const ProgressBar = ({ value }) => {
-  console.log(value);
   return (
     <>
       <div className="mb-1 text-xs font-medium dark:text-white">

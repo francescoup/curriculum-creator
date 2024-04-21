@@ -19,7 +19,7 @@ const Education = () => {
       <div>
         {educations.map((e, i) => {
           return (
-            <div key={e.id}>
+            <div key={e.id} className="mb-4">
               <SectionTitle>{e.eduTitle}</SectionTitle>
               <p className="text-xs text-gray-700">{e.eduInstitute}</p>
               <div className="flex justify-start gap-4 text-xs">

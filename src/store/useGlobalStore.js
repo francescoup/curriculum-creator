@@ -26,27 +26,35 @@ export const useStore = create(
   )
 );
 
-export const usePersonalInfo = create((set) => ({
-  ...styleSlice(set),
-  ...personalInfoSlice(set),
-  ...createJobsSlice(set),
-  ...educationSlice(set),
-  ...skillSlice(set),
-  ...projectSlice(set),
-  ...summarySlice(set),
-  ...linkSlice(set),
-  ...certificationsSlice(set),
-  ...passionlice(set),
-  ...languagesSlice(set),
-  resumes: [],
+export const usePersonalInfo = create(
+  persist(
+    (set) => ({
+      ...styleSlice(set),
+      ...personalInfoSlice(set),
+      ...createJobsSlice(set),
+      ...educationSlice(set),
+      ...skillSlice(set),
+      ...projectSlice(set),
+      ...summarySlice(set),
+      ...linkSlice(set),
+      ...certificationsSlice(set),
+      ...passionlice(set),
+      ...languagesSlice(set),
+      resumes: [],
 
-  addResume() {
-    set((state) => ({
-      resumes: [
-        ...state.resumes,
-        { fullname: state.fullName, jobs: state.jobs },
-      ],
-      id: Date.now(),
-    }));
-  },
-}));
+      addResume() {
+        set((state) => ({
+          resumes: [
+            ...state.resumes,
+            { fullname: state.fullName, jobs: state.jobs },
+          ],
+          id: Date.now(),
+        }));
+      },
+    }),
+    {
+      name: "resume",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);

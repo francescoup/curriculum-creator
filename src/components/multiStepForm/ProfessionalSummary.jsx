@@ -1,10 +1,9 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState } from "react";
 import InputText from "../../atoms/InputText";
 import TextArea from "../../atoms/TextArea";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
 import Checkbox from "../../atoms/Checkbox";
-import Modal from "../Modal";
 import EditExperiences from "../editForm/EditExperiences";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
@@ -16,7 +15,7 @@ const ProfessionalSummary = () => {
   const checked = () => {
     setIsChecked(!isChecked);
   };
-  console.log(isChecked);
+
   const {
     jTitle,
     jobTitle,
@@ -62,7 +61,7 @@ const ProfessionalSummary = () => {
       editJobs: s.editJobs,
     }))
   );
-  console.log(jChecked);
+
   return (
     <>
       <div className="flex flex-col items-end gap-2 w-full relative">

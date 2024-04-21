@@ -30,8 +30,10 @@ const Title = () => {
 
   return (
     <section>
-      <h1 className="text-2xl/6 text-gray-950">{fullName.toUpperCase()}</h1>
-      <h2 className="text-lg text-sky-900">{profileTitle}</h2>
+      <h1 className="text-2xl/6 text-gray-950 mb-4">
+        {fullName.toUpperCase()}
+      </h1>
+      <h2 className="text-lg text-sky-900 mb-2">{profileTitle}</h2>
       <div className="flex gap-2 text-xs text-gray-700">
         {phone && (
           <span className="flex items-center gap-1">
