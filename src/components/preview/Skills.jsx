@@ -7,21 +7,25 @@ const Skills = () => {
   const skiTitle = usePersonalInfo((s) => s.skiTitle);
 
   return (
-    <section>
-      <Title>{skiTitle.toUpperCase()}</Title>
-      <div className="w-full flex flex-wrap gap-2">
-        {skills.map((s, i) => {
-          return (
-            <span
-              className="py-2 px-1 border-b border-indigo-400 text-xs"
-              key={s.id}
-            >
-              {s.skill}
-            </span>
-          );
-        })}
-      </div>
-    </section>
+    <>
+      {skills.length ? (
+        <section>
+          <Title>{skiTitle.toUpperCase()}</Title>
+          <div className="w-full flex flex-wrap gap-2">
+            {skills.map((s, i) => {
+              return (
+                <span
+                  className="py-2 px-1 border-b border-indigo-400 text-xs"
+                  key={s.id}
+                >
+                  {s.skill}
+                </span>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+    </>
   );
 };
 

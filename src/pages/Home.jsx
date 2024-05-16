@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Card from "../components/Card";
+import Footer from "../components/Footer";
 import { cardData } from "../data/cardData";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
           return <Card key={i} {...elemets} />;
         })}
       </div>
+      <Footer />
     </div>
   );
 };

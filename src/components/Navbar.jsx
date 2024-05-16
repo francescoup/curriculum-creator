@@ -7,7 +7,7 @@ const Navbar = ({ print }) => {
     <nav className="flex top-0 justify-between items-center w-full h-12 px-4 py-8 md:px-20">
       <div>
         <span>
-          <span>My</span> Resume
+          <span className="text-2xl text-gray-700">My Resume Builder</span>
         </span>
       </div>
       <div>

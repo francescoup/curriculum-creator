@@ -7,22 +7,26 @@ const PassionsPreview = () => {
   const pasTitle = usePersonalInfo((s) => s.pasTitle);
 
   return (
-    <section>
-      <Title>{pasTitle.toUpperCase()}</Title>
+    <>
+      {passions.lengtn ? (
+        <section>
+          <Title>{pasTitle.toUpperCase()}</Title>
 
-      <div className="w-full flex flex-wrap gap-2">
-        {passions.map((p, i) => {
-          return (
-            <span
-              className="  py-2 px-1 border-b border-indigo-400 text-xs"
-              key={p.id}
-            >
-              {p.passion}
-            </span>
-          );
-        })}
-      </div>
-    </section>
+          <div className="w-full flex flex-wrap gap-2">
+            {passions.map((p, i) => {
+              return (
+                <span
+                  className="  py-2 px-1 border-b border-indigo-400 text-xs"
+                  key={p.id}
+                >
+                  {p.passion}
+                </span>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+    </>
   );
 };
 

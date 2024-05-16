@@ -11,18 +11,22 @@ const Language = () => {
     }))
   );
   return (
-    <section>
-      <Title>{languageTitle.toUpperCase()}</Title>
-      <div>
-        {languages?.map((l) => {
-          return (
-            <div className="text-xs flex justify-between text-gray-700">
-              <div>{l.language}</div> <div>{l.level}</div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+    <>
+      {languages.length ? (
+        <section>
+          <Title>{languageTitle.toUpperCase()}</Title>
+          <div>
+            {languages?.map((l) => {
+              return (
+                <div className="text-xs flex justify-between text-gray-700">
+                  <div>{l.language}</div> <div>{l.level}</div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+    </>
   );
 };
 

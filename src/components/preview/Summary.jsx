@@ -8,7 +8,7 @@ const Summary = () => {
 
   return (
     <section>
-      <Title>{summaryTitle.toUpperCase()}</Title>
+      <Title>{summary ? summaryTitle.toUpperCase() : null}</Title>
       <div>
         <p className="text-xs text-gray-700">{summary}</p>
       </div>

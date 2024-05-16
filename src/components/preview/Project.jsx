@@ -9,24 +9,30 @@ const Project = () => {
   const projectLink = usePersonalInfo((s) => s.projectLink);
 
   return (
-    <section>
-      <Title>{proTitle.toUpperCase()}</Title>
+    <>
+      {projects.length ? (
+        <section>
+          <Title>{proTitle.toUpperCase()}</Title>
 
-      {projects.map((p, i) => {
-        return (
-          <div className="mb-2" key={p.id}>
-            <SectionTitle>{p.projectName}</SectionTitle>
-            <a
-              className="text-xs text-gray-700"
-              href={`https://${p.projectLink}`}
-            >
-              {p.projectLink}
-            </a>
-            <div className="text-xs text-gray-700">{p.projectDescriptions}</div>
-          </div>
-        );
-      })}
-    </section>
+          {projects.map((p, i) => {
+            return (
+              <div className="mb-2" key={p.id}>
+                <SectionTitle>{p.projectName}</SectionTitle>
+                <a
+                  className="text-xs text-gray-700"
+                  href={`https://${p.projectLink}`}
+                >
+                  {p.projectLink}
+                </a>
+                <div className="text-xs text-gray-700">
+                  {p.projectDescriptions}
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      ) : null}
+    </>
   );
 };
 
