@@ -1,11 +1,25 @@
 export const personalInfoSlice = (set) => ({
   id: Date.now(),
   stepTitle: "Informazioni personali",
+  files: "",
+  showImages: true,
   fullName: "",
   profileTitle: "",
   email: "",
   phone: "",
   profileAdress: "",
+  updateFiles(value) {
+    set((state) => ({
+      ...state,
+      files: URL.createObjectURL(value),
+    }));
+  },
+  updateImages() {
+    set((state) => ({
+      showImages: !state.showImages,
+      files: "",
+    }));
+  },
   updateName(value) {
     set((state) => ({ ...state, fullName: value }));
   },
