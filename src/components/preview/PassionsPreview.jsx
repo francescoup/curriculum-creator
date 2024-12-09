@@ -5,10 +5,10 @@ import Title from "../../atoms/Title";
 const PassionsPreview = () => {
   const passions = usePersonalInfo((s) => s.passions);
   const pasTitle = usePersonalInfo((s) => s.pasTitle);
-
+  console.log(passions);
   return (
     <>
-      {passions.lengtn ? (
+      {passions.length ? (
         <section>
           <Title>{pasTitle.toUpperCase()}</Title>
 
@@ -16,7 +16,7 @@ const PassionsPreview = () => {
             {passions.map((p, i) => {
               return (
                 <span
-                  className="  py-2 px-1 border-b border-indigo-400 text-xs"
+                  className="py-2 px-1 border-b border-indigo-400 text-xs"
                   key={p.id}
                 >
                   {p.passion}
