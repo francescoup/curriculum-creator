@@ -43,7 +43,7 @@ const PersonalInformations = () => {
       updateProfileAdress: s.updateProfileAdress,
     }))
   );
-  console.log(files);
+
   return (
     <div className="flex flex-col gap-2 w-full h-full ">
       <StepTitle title={stepTitle} updateTitle={updateStepTitle} />
@@ -53,7 +53,7 @@ const PersonalInformations = () => {
           onChange={(e) => updateFiles(e.target.files[0])}
         />
         <button className="text-xs text-slate-700" onClick={updateImages}>
-          nascondi / cancella
+          nascondi / mostra
         </button>
       </div>
 
