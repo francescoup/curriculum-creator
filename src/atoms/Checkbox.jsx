@@ -19,8 +19,8 @@ const Checkbox = ({ name, label, onChange, value }) => {
           className={`relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full ${
             value
               ? "after:translate-x-full after:border-white after:bg-blue-600"
-              : "rtl:after:-translate-x-full"
-          } after:content-[' '] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all`}
+              : "rtl:after:-translate-x-full after:bg-white"
+          } after:content-[' '] after:absolute after:top-[2px] after:start-[2px]  after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all`}
         ></div>
         <span
           className={`ms-2 ${
