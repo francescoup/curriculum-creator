@@ -15,7 +15,7 @@ const ResumePreview = ({ print, printPage }) => {
     <>
       <div
         ref={print}
-        className="bg-white border shadow-xl md:w-[210mm] min-w-[210mm] min-h-[297mm] max-sm:scale-[.45]  max-sm:origin-top  p-14  print:w-full print:shadow-none"
+        className="bg-white relative border shadow-xl md:w-[210mm] min-w-[210mm] min-h-[297mm] max-sm:scale-[.45]  max-sm:origin-top  p-14  print:w-full print:shadow-none"
       >
         <Title />
         <div className="grid grid-cols-3 gap-2 print:w-full items-start mt-4">
@@ -23,15 +23,18 @@ const ResumePreview = ({ print, printPage }) => {
             <Summary />
             <Experiences />
             <Education />
-            <PassionsPreview />
+            <Skills />
           </div>
           <div className="col-span-1 grid gap-2">
-            <Skills />
             <Project />
             <Certifications />
+            <PassionsPreview />
             <Language />
           </div>
         </div>
+        <span className="bottom-10 text-xs text-gray-600 absolute">
+          developed by Francesco Mangione
+        </span>
       </div>
     </>
   );

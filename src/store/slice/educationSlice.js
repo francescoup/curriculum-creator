@@ -46,7 +46,7 @@ export const educationSlice = (set) => ({
           eduFrom: state.eduFrom,
           eduTo: state.eduTo,
           eduAdress: state.eduAdress,
-          eChecked: state.eChecked,
+          eChecked: !state.eChecked,
         },
       ],
       id: Date.now(),
@@ -55,6 +55,7 @@ export const educationSlice = (set) => ({
       eduFrom: "",
       eduTo: "",
       eduAdress: "",
+      eChecked: false,
     }));
   },
   removeEdu(id) {

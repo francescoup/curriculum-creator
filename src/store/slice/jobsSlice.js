@@ -49,7 +49,7 @@ export const createJobsSlice = (set) => ({
           to: state.to,
           adress: state.adress,
           description: state.description,
-          jChecked: state.jChecked,
+          jChecked: !state.jChecked,
         },
       ],
       id: Date.now(),
@@ -59,6 +59,7 @@ export const createJobsSlice = (set) => ({
       to: "",
       adress: "",
       description: "",
+      jChecked: false,
     }));
   },
   removeJobs(id) {
