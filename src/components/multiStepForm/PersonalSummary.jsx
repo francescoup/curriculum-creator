@@ -15,7 +15,7 @@ const PersonalSummary = () => {
         value={summary}
         text="Inserisci una breve descrizione del tuo percorso professionale."
         onChange={(e) => updateSummary(e.target.value)}
-        label="Inserisci una breve introduzione"
+        label="L'about me è una delle prime cose che chi valuta CV legge e permette di avere una prima overview di chi sei, cosa hai fatto e soprattutto cosa cerchi nel tuo futuro professionale."
       />
     </div>
   );

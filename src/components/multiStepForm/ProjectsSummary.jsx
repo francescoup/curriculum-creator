@@ -38,6 +38,10 @@ const ProjectsSummary = () => {
   return (
     <div className="flex flex-col items-end gap-2 w-full relative">
       <StepTitle title={proTitle} updateTitle={updateProTitle} />
+      <p className="w-full text-gray-400 text-xs">
+        Inserire dei progetti ai quali hai preso parte fornisce informazione
+        pratiche su cosa sai fare.
+      </p>
       <InputText
         value={projectName}
         onChange={(e) => updateProjectName(e.target.value)}

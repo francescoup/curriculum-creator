@@ -10,21 +10,20 @@ const Certifications = () => {
   return (
     <>
       {certifications.length ? (
-        <div>
+        <section>
           <Title>{certTitle.toUpperCase()}</Title>
-          <div>
-            {certifications.map((c) => {
-              return (
-                <div key={c.id}>
-                  <SectionTitle>{c.certificationTitle}</SectionTitle>
-                  <div className="text-xs text-gray-700">
-                    {c.certificationAdress}
-                  </div>
+
+          {certifications.map((c) => {
+            return (
+              <div key={c.id}>
+                <SectionTitle>{c.certificationTitle}</SectionTitle>
+                <div className="text-xs text-gray-700">
+                  {c.certificationAdress}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+              </div>
+            );
+          })}
+        </section>
       ) : null}
     </>
   );

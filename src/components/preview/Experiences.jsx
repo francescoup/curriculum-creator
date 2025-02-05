@@ -37,10 +37,10 @@ const Experiences = () => {
           <div>
             {jobs.map((job, i) => {
               return (
-                <div className="mb-4" key={i}>
+                <div className="mb-2" key={i}>
                   <SectionTitle>{job.jobTitle}</SectionTitle>
 
-                  <div className="flex justify-start items-center gap-4 text-gray-700 text-xs">
+                  <div className="flex justify-start items-center gap-2 text-gray-700 text-xs">
                     <div className="text-xs">{job.company}</div>
                     <div className="flex gap-1">
                       <span>{formatDate(job.from)}</span>

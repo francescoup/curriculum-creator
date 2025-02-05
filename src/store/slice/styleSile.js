@@ -1,6 +1,6 @@
 export const styleSlice = (set) => ({
-  titleColor: "",
-  subTitleColor: "",
+  titleColor: "text-red-800",
+  subTitleColor: "text-red-400",
   updateColorTitle(value) {
     set((state) => ({
       ...state,

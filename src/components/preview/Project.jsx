@@ -16,16 +16,18 @@ const Project = () => {
 
           {projects.map((p, i) => {
             return (
-              <div className="mb-2" key={p.id}>
+              <div key={p.id}>
                 <SectionTitle>{p.projectName}</SectionTitle>
-                <a
-                  className="text-xs text-gray-700"
-                  href={`https://${p.projectLink}`}
-                >
-                  {p.projectLink}
-                </a>
-                <div className="text-xs text-gray-700">
-                  {p.projectDescriptions}
+                <div>
+                  <div className="text-xs text-gray-700">
+                    {p.projectDescriptions}
+                  </div>
+                  <a
+                    className="text-xs text-gray-700"
+                    href={`https://${p.projectLink}`}
+                  >
+                    {p.projectLink}
+                  </a>
                 </div>
               </div>
             );

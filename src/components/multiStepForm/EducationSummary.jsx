@@ -19,6 +19,11 @@ const EducationSummary = () => {
   return (
     <div className="flex flex-col items-end gap-2 w-full">
       <StepTitle title={certTitle} updateTitle={updatecertTitle} />
+      <p className="w-full text-gray-400 text-xs">
+        Questa sezione è molto importante, per segnalare di avere completato
+        determinati corsi e per mettere in evidenza la nostra voglia di
+        apprendere.
+      </p>
       <InputText
         value={certificationTitle}
         onChange={(e) => updateCertTitle(e.target.value)}

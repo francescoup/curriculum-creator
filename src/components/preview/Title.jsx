@@ -1,5 +1,6 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { Link } from "react-router-dom";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -61,16 +62,26 @@ const Title = () => {
         {linkedin && (
           <span className="flex items-center gap-1">
             <FaLink />
-            {linkedin}
+            <Link
+              to={`https://${linkedin} `}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {linkedin}
+            </Link>
           </span>
         )}
         {github && (
           <span className="flex items-center gap-1">
             <FaLink />
 
-            <a href={github} rel="noopener noreferrer">
+            <Link
+              to={`https://${github} `}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               {github}
-            </a>
+            </Link>
           </span>
         )}
         {profileAdress && (

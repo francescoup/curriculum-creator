@@ -16,7 +16,7 @@ const PassionsPreview = () => {
             {passions.map((p, i) => {
               return (
                 <span
-                  className="py-2 px-1 border-b border-indigo-400 text-xs"
+                  className="py-1 px-1 border-b border-indigo-400 text-xs"
                   key={p.id}
                 >
                   {p.passion}

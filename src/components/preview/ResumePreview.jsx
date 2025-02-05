@@ -19,20 +19,20 @@ const ResumePreview = ({ print, printPage }) => {
       >
         <Title />
         <div className="grid grid-cols-3 gap-2 print:w-full items-start mt-4">
-          <div className="col-span-2 grid gap-2 ">
+          <div className="col-span-2 grid gap-3 ">
             <Summary />
             <Experiences />
             <Education />
             <Skills />
           </div>
-          <div className="col-span-1 grid gap-2">
+          <div className="col-span-1 grid gap-3">
             <Project />
             <Certifications />
             <PassionsPreview />
             <Language />
           </div>
         </div>
-        <span className="bottom-10 text-xs text-gray-600 absolute">
+        <span className="bottom-5 right-5 text-xs text-gray-600 absolute">
           developed by Francesco Mangione
         </span>
       </div>

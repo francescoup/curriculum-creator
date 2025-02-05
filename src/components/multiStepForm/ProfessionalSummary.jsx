@@ -66,7 +66,12 @@ const ProfessionalSummary = () => {
     <>
       <div className="flex flex-col items-end gap-2 w-full relative">
         <StepTitle title={jTitle} updateTitle={updateJtitle} />
-
+        <p className="w-full text-gray-400 text-xs">
+          In questa sezione l'obiettivo principale è di trovare il giusto
+          compromesso fra l'essere sintetici ma allo stesso tempo esaustivi nel
+          raccontare cosa hai fatto nel tuo percorso professionale e valorizzare
+          i progetti più rilevanti, le tecnologie utilizzate, etc.
+        </p>
         <InputText
           value={jobTitle}
           onChange={(e) => updateJobTitle(e.target.value)}

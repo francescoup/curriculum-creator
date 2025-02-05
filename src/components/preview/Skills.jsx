@@ -15,7 +15,7 @@ const Skills = () => {
             {skills.map((s, i) => {
               return (
                 <span
-                  className="py-2 px-1 border-b border-indigo-400 text-xs"
+                  className="py-1 px-1 border-b border-indigo-400 text-xs"
                   key={s.id}
                 >
                   {s.skill}

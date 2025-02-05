@@ -52,6 +52,11 @@ const AccademicSummary = () => {
   return (
     <div className="flex flex-col gap-2 w-full items-end">
       <StepTitle title={eTitle} updateTitle={updateETitle} />
+      <p className="w-full text-gray-400 text-xs">
+        In caso di profilo senior, potrebbe avere senso inserire solo la laurea,
+        se invece sei un profilo junior si può inserire anche il diploma o corsi
+        ancora da completare.
+      </p>
       <InputText
         value={eduTitle}
         onChange={(e) => updateEduTitle(e.target.value)}

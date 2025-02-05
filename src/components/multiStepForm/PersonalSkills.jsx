@@ -39,6 +39,13 @@ const PersonalSkills = () => {
   return (
     <div className="flex flex-col gap-2 w-full items-end">
       <StepTitle title={skiTitle} updateTitle={updateSkiTitle} />
+      <p className="w-full text-gray-400 text-xs">
+        Questa sezione permette chiaramente di elencare in maniera ordinata e
+        sintetica tutte le competenze tecniche che hai acquisito. Sarebbe
+        decisamente preferibile elencarle inserendo nelle prime posizioni le
+        tecnologie/linguaggi sui quali sei più esperto/a o che usi giornalmente,
+        in modo tale da non “confondere” chi sta leggendo il tuo CV.
+      </p>
       <InputText
         value={skill}
         onChange={(e) => updateSkill(e.target.value)}

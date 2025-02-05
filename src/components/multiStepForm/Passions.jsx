@@ -38,6 +38,11 @@ const Passions = () => {
   return (
     <div className="flex flex-col gap-2 w-full items-end">
       <StepTitle title={pasTitle} updateTitle={updatePasTitle} />
+      <p className="w-full text-gray-400 text-xs">
+        Questa sezione permette di conoscere il professionista come persona e
+        non solo come tecnico, fornisce degli spunti per l'inizio della
+        conversazione.
+      </p>
       <InputText
         value={passion}
         onChange={(e) => updatePassion(e.target.value)}
