@@ -1,4 +1,4 @@
-const Checkbox = ({ name, label, onChange, value }) => {
+const Checkbox = ({ name, label, onChange, value, text }) => {
   return (
     <>
       <label
@@ -27,7 +27,7 @@ const Checkbox = ({ name, label, onChange, value }) => {
             value ? "text-gray-600" : "text-gray-400"
           }  text-xs`}
         >
-          In corso
+          {text}
         </span>
       </label>
     </>

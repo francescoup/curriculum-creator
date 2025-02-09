@@ -106,7 +106,7 @@ const ProfessionalSummary = () => {
             type="date"
           />
         </div>
-        <Checkbox value={jChecked} onChange={updateJChecked} />
+        <Checkbox value={jChecked} onChange={updateJChecked} text="In corso" />
         <TextArea
           value={description}
           onChange={(e) => updateDescription(e.target.value)}

@@ -26,7 +26,6 @@ const ShortCard = ({ title, subTitle, handleClick, value }) => {
       >
         <div>
           <SectionTitle>{title}</SectionTitle>
-          <Title>{subTitle}</Title>
         </div>
         <div className="text-gray-800 text-xl cursor-pointer">
           <HiOutlineDotsVertical />

@@ -1,4 +1,5 @@
 import Title from "../../atoms/Title";
+import InnerContent from "../../atoms/InnerContent";
 import SectionTitle from "../../atoms/SectionTitle";
 import formatDate from "../../utils/formatDate";
 import { usePersonalInfo } from "../../store/useGlobalStore";
@@ -49,7 +50,7 @@ const Experiences = () => {
                     </div>
                     <span>{job.adress}</span>
                   </div>
-                  <p className="text-xs text-gray-700">{job.description}</p>
+                  <InnerContent content={job.description} />
                 </div>
               );
             })}

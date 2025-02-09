@@ -1,6 +1,7 @@
 import React from "react";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
+import InnerContent from "../../atoms/InnerContent";
 
 const Summary = () => {
   const summary = usePersonalInfo((state) => state.summary);
@@ -10,7 +11,7 @@ const Summary = () => {
     <section>
       <Title>{summary ? summaryTitle.toUpperCase() : null}</Title>
       <div>
-        <p className="text-xs text-gray-700">{summary}</p>
+        <InnerContent content={summary} />
       </div>
     </section>
   );

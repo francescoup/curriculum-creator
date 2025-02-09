@@ -87,7 +87,7 @@ const AccademicSummary = () => {
           type="date"
         />
       </div>
-      <Checkbox value={eChecked} onChange={updateEChecked} />
+      <Checkbox value={eChecked} onChange={updateEChecked} text="In corso" />
       <Buttons size="small" handleClick={addEdu}>
         + Aggiungi istruzione
       </Buttons>

@@ -15,7 +15,7 @@ const BottomBar = ({
   isRight,
 }) => {
   return (
-    <div className="fixed grid grid-cols-5 gap-4 bottom-[10px] bg-white border-2 py-2 px-4 rounded-full border-gray-200 max-sm:w-[96%] left-1/2 -translate-x-1/2  z-30">
+    <div className="fixed grid grid-cols-5 gap-4 bottom-[8px] bg-white border-2 py-2 px-4 rounded-full border-gray-200 max-sm:w-[96%] left-1/2 -translate-x-1/2  z-30">
       <Buttons disabled={step === 0 ? true : false} handleClick={prevStep}>
         <div className="flex justify-center text-xl">
           <MdUndo />

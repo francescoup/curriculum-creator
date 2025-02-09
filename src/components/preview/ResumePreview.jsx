@@ -9,8 +9,10 @@ import Education from "./Education";
 import PassionsPreview from "./PassionsPreview";
 import Language from "./Language";
 import Navbar from "../Navbar";
+import { usePersonalInfo } from "../../store/useGlobalStore";
 
 const ResumePreview = ({ print, printPage }) => {
+  const brand = usePersonalInfo((s) => s.brand);
   return (
     <>
       <div
@@ -32,9 +34,11 @@ const ResumePreview = ({ print, printPage }) => {
             <Language />
           </div>
         </div>
-        <span className="bottom-5 right-5 text-xs text-gray-600 absolute">
-          developed by Francesco Mangione
-        </span>
+        {brand && (
+          <span className="bottom-5 right-5 text-xs text-gray-600 absolute">
+            developed by Francesco Mangione
+          </span>
+        )}
       </div>
     </>
   );

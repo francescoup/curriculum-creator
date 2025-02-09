@@ -52,7 +52,11 @@ const PersonalSkills = () => {
         label="Skills"
         onkeydown={fireSkills}
       />
-      <Buttons handleClick={addSkills} size="small">
+      <Buttons
+        disabled={skill ? false : true}
+        handleClick={addSkills}
+        size="small"
+      >
         + Aggiungi le tue skills
       </Buttons>
       <div className="w-full flex flex-wrap gap-2">

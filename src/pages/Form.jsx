@@ -47,7 +47,7 @@ const Form = () => {
           isOpen
             ? "md:-translate-x-96 -translate-x-full"
             : "md:translate-x-0 translate-x-0"
-        } bg-white fixed top-0 left-0 w-full h-screen md:w-96 z-20 transition-all p-4 shadow-sm `}
+        } bg-white fixed top-0 left-0 w-full h-screen pb-28 md:pb-20 md:w-96 z-20 transition-all p-4 shadow-sm `}
       >
         <ProgressBar value={step} />
         <StepForm index={step} />

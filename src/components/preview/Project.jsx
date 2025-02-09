@@ -2,6 +2,7 @@ import React from "react";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import Title from "../../atoms/Title";
 import SectionTitle from "../../atoms/SectionTitle";
+import InnerContent from "../../atoms/InnerContent";
 
 const Project = () => {
   const projects = usePersonalInfo((s) => s.projects);
@@ -19,9 +20,7 @@ const Project = () => {
               <div key={p.id}>
                 <SectionTitle>{p.projectName}</SectionTitle>
                 <div>
-                  <div className="text-xs text-gray-700">
-                    {p.projectDescriptions}
-                  </div>
+                  <InnerContent content={p.projectDescriptions} />
                   <a
                     className="text-xs text-gray-700"
                     href={`https://${p.projectLink}`}
