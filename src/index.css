@@ -23,7 +23,7 @@ body a {
   @apply w-full  border  border-gray-400 bg-white py-2 px-2 mt-4 text-gray-400 rounded-sm focus:outline-none focus:border-b-2 focus:border-b-sky-700 text-xs;
 }
 .rsw-editor {
-  @apply border-none rounded-none;
+  @apply border-none rounded-none !important;
 }
 
 .rsw-toolbar {
