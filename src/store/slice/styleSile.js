@@ -2,6 +2,7 @@ export const styleSlice = (set) => ({
   titleColor: "text-red-800",
   subTitleColor: "text-red-400",
   brand: true,
+  privacy: false,
   updateColorTitle(value) {
     set((state) => ({
       ...state,
@@ -17,6 +18,11 @@ export const styleSlice = (set) => ({
   updateBrand() {
     set((state) => ({
       brand: !state.brand,
+    }));
+  },
+  updatePrivacy() {
+    set((state) => ({
+      privacy: !state.privacy,
     }));
   },
 });

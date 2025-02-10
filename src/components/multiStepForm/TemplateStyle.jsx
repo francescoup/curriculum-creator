@@ -15,8 +15,10 @@ const TemplateStyle = () => {
   const updateColorSubTitle = usePersonalInfo((s) => s.updateColorSubTitle);
   const brand = usePersonalInfo((s) => s.brand);
   const updateBrand = usePersonalInfo((s) => s.updateBrand);
+  const privacy = usePersonalInfo((s) => s.privacy);
+  const updatePrivacy = usePersonalInfo((s) => s.updatePrivacy);
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-4">
       <span className="text-xl text-gray-50">Personalizzazioni</span>
       {/* <LayoutSwitch /> */}
       {/* <InputSelect label="font family" name="font family" options={color} /> */}
@@ -31,6 +33,11 @@ const TemplateStyle = () => {
         colors={colorsSubtitle}
       />
       <Checkbox value={brand} onChange={updateBrand} text="nascondi brand" />
+      <Checkbox
+        value={privacy}
+        onChange={updatePrivacy}
+        text="mostra privacy"
+      />
     </div>
   );
 };
