@@ -11,6 +11,7 @@ import Language from "./Language";
 import Privacy from "../../atoms/Privacy";
 import Navbar from "../Navbar";
 import { usePersonalInfo } from "../../store/useGlobalStore";
+import BrandButton from "../../atoms/BrandButton";
 
 const ResumePreview = ({ print, printPage }) => {
   const brand = usePersonalInfo((s) => s.brand);
@@ -37,11 +38,7 @@ const ResumePreview = ({ print, printPage }) => {
           </div>
         </div>
         {privacy && <Privacy />}
-        {brand && (
-          <span className="bottom-3 right-5 text-xs text-gray-400 absolute">
-            developed by Francesco Mangione
-          </span>
-        )}
+        {brand && <BrandButton />}
       </div>
     </>
   );
