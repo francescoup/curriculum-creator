@@ -62,3 +62,6 @@ rsw-ce ul {
 li > span {
   @apply text-gray-700 !important;
 }
+.summary > span {
+  @apply text-gray-700 !important;
+}
