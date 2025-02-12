@@ -5,7 +5,6 @@ import Title from "../../atoms/Title";
 const PassionsPreview = () => {
   const passions = usePersonalInfo((s) => s.passions);
   const pasTitle = usePersonalInfo((s) => s.pasTitle);
-  console.log(passions);
   return (
     <>
       {passions.length ? (
