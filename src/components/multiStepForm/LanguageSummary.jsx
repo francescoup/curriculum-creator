@@ -47,7 +47,11 @@ const LanguageSummary = () => {
           options={levelLanguage}
         />
       </div>
-      <Buttons handleClick={addLanguage} size="small">
+      <Buttons
+        disabled={language ? false : true}
+        handleClick={addLanguage}
+        size="small"
+      >
         + Aggiungi lingua
       </Buttons>
       <div className="w-full flex flex-wrap gap-2">

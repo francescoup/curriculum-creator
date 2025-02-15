@@ -49,7 +49,11 @@ const Passions = () => {
         label="Passioni"
         onkeydown={firePassions}
       />
-      <Buttons handleClick={addPassions} size="small">
+      <Buttons
+        disabled={passion ? false : true}
+        handleClick={addPassions}
+        size="small"
+      >
         + Aggiungi le tue passioni
       </Buttons>
       <div className="w-full flex flex-wrap gap-2">
