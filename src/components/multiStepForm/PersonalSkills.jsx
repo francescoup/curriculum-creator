@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
 import { IoMdClose } from "react-icons/io";
-
+import {
+  Reorder,
+  useMotionValue,
+  useDragControls,
+  motion,
+} from "framer-motion";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
 
@@ -23,6 +28,7 @@ const PersonalSkills = () => {
     addSkills,
     skills,
     removeSkill,
+    editSkills,
   } = usePersonalInfo(
     useShallow((s) => ({
       id: s.id,
@@ -33,8 +39,20 @@ const PersonalSkills = () => {
       skills: s.skills,
       addSkills: s.addSkills,
       removeSkill: s.removeSkill,
+      editSkills: s.editSkills,
     }))
   );
+
+  const [newSkill, setNewSkill] = useState(skills);
+  const y = useMotionValue(0);
+
+  useEffect(() => {
+    setNewSkill(skills);
+  }, [skills]);
+
+  useEffect(() => {
+    editSkills(newSkill);
+  }, [newSkill]);
 
   return (
     <div className="flex flex-col gap-2 w-full items-end">
@@ -59,24 +77,33 @@ const PersonalSkills = () => {
       >
         + Aggiungi le tue skills
       </Buttons>
-      <div className="w-full flex flex-wrap gap-2">
-        {skills.map((s, i) => {
-          return (
-            <div
-              className="flex justify-between items-center border gap-2 py-2 px-4 bg-gray-50 rounded-sm text-xs text-sky-900"
-              key={s.id}
-            >
-              <span className="text-sky-600">{s.skill}</span>
-              <span
-                className="cursor-pointer text-lg text-sky-600"
-                onClick={() => removeSkill(s.id)}
-              >
-                <IoMdClose />
-              </span>
-            </div>
-          );
-        })}
-      </div>
+      <motion.div className="w-full flex flex-wrap gap-2">
+        <Reorder.Group
+          axis="y"
+          values={newSkill}
+          onReorder={setNewSkill}
+          className="w-full"
+        >
+          {newSkill.map((s, i) => {
+            return (
+              <Reorder.Item value={s} key={s.id} dragConstraints={{ top: 0 }}>
+                <div
+                  className="flex w-full justify-between items-center border mb-2 gap-2 py-2 px-4 bg-gray-50 rounded-sm text-xs text-sky-900"
+                  key={s.id}
+                >
+                  <span className="text-sky-600">{s.skill}</span>
+                  <span
+                    className="cursor-pointer text-lg text-sky-600"
+                    onClick={() => removeSkill(s.id)}
+                  >
+                    <IoMdClose />
+                  </span>
+                </div>
+              </Reorder.Item>
+            );
+          })}
+        </Reorder.Group>
+      </motion.div>
     </div>
   );
 };

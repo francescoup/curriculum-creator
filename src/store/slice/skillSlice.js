@@ -30,4 +30,10 @@ export const skillSlice = (set) => ({
       skills: state.skills.filter((s) => s.id !== id),
     }));
   },
+  editSkills(value) {
+    set((state) => ({
+      ...state,
+      skills: value,
+    }));
+  },
 });
