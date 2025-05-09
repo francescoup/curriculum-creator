@@ -30,4 +30,10 @@ export const passionlice = (set) => ({
       passions: state.passions.filter((s) => s.id !== id),
     }));
   },
+  editP(value) {
+    set((state) => ({
+      ...state,
+      passions: value,
+    }));
+  },
 });

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import InputText from "../../atoms/InputText";
 import Buttons from "../../atoms/Buttons";
 import StepTitle from "../../atoms/StepTitle";
+import Chips from "../Chips";
+import { Reorder, useMotionValue, motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { usePersonalInfo } from "../../store/useGlobalStore";
 import { useShallow } from "zustand/react/shallow";
@@ -16,6 +18,7 @@ const Passions = () => {
     addPassions,
     passions,
     removePassions,
+    editP,
   } = usePersonalInfo(
     useShallow((s) => ({
       id: s.id,
@@ -26,6 +29,7 @@ const Passions = () => {
       passions: s.passions,
       addPassions: s.addPassions,
       removePassions: s.removePassions,
+      editP: s.editP,
     }))
   );
 
@@ -35,6 +39,18 @@ const Passions = () => {
     }
     return;
   };
+
+  const [newP, setNewP] = useState(passions);
+  const y = useMotionValue(0);
+
+  useEffect(() => {
+    setNewP(passions);
+  }, [passions]);
+
+  useEffect(() => {
+    editP(newP);
+  }, [newP]);
+
   return (
     <div className="flex flex-col gap-2 w-full items-end">
       <StepTitle title={pasTitle} updateTitle={updatePasTitle} />
@@ -56,24 +72,37 @@ const Passions = () => {
       >
         + Aggiungi le tue passioni
       </Buttons>
-      <div className="w-full flex flex-wrap gap-2">
-        {passions.map((p, i) => {
-          return (
-            <div
-              className="flex justify-between items-center gap-2 border py-2 px-4 bg-gray-50 rounded-sm text-xs text-sky-900"
-              key={p.id}
-            >
-              <span className="text-sky-600">{p.passion}</span>
-              <span
-                className="cursor-pointer text-lg text-sky-600"
-                onClick={() => removePassions(p.id)}
-              >
-                <IoMdClose />
-              </span>
-            </div>
-          );
-        })}
-      </div>
+      <motion.div className="w-full flex flex-wrap gap-2">
+        <Reorder.Group
+          axis="y"
+          values={newP}
+          onReorder={setNewP}
+          className="w-full"
+        >
+          {newP.map((p, i) => {
+            return (
+              // <div
+              //   className="flex justify-between items-center gap-2 border py-2 px-4 bg-gray-50 rounded-sm text-xs text-sky-900"
+              //   key={p.id}
+              // >
+              //   <span className="text-sky-600">{p.passion}</span>
+              //   <span
+              //     className="cursor-pointer text-lg text-sky-600"
+              //     onClick={() => removePassions(p.id)}
+              //   >
+              //     <IoMdClose />
+              //   </span>
+              // </div>
+              <Chips
+                title={p.passion}
+                value={p}
+                key={p.id}
+                handleClick={removePassions}
+              />
+            );
+          })}
+        </Reorder.Group>
+      </motion.div>
     </div>
   );
 };
